@@ -1,0 +1,6 @@
+framework module Pods_ATMessager {
+  umbrella header "Pods-ATMessager-umbrella.h"
+
+  export *
+  module * { export * }
+}
