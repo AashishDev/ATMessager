@@ -52,16 +52,13 @@ class UserListViewController: UIViewController, UITableViewDelegate, UITableView
     
     
 // MARK: UITableView Method
-    
-     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return userList.count
     }
     
-     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "UserCell")
-//        var cell = tableView.dequeueReusableCell(withIdentifier: "UserCell", for: indexPath)
-        
         let user = userList[indexPath.row]
         cell.textLabel?.text = user.name
         cell.detailTextLabel?.text = user.location
