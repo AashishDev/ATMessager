@@ -13,4 +13,10 @@ class UserListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    //1] Logout Firebase.
+    @IBAction func logoutButtonTapped(_ sender: Any) {
+        
+        
+    }
 }

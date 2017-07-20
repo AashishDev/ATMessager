@@ -137,10 +137,64 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="MAm-u2-wQG"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="aNy-gb-Gq7" id="6ni-PB-NbZ"/>
+                        <outlet property="passwordTextField" destination="TdG-88-HTm" id="vSQ-WM-2bH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1015" y="548"/>
+        </scene>
+        <!--User List View Controller-->
+        <scene sceneID="9jO-TE-JA1">
+            <objects>
+                <viewController storyboardIdentifier="UserList" useStoryboardIdentifierAsRestorationIdentifier="YES" id="SOK-BD-oO8" customClass="UserListViewController" customModule="ATMessager" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cxe-3f-MbC"/>
+                        <viewControllerLayoutGuide type="bottom" id="HNc-uy-ttv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zgh-Sd-cQf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dy8-T4-7Rm">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AWT-h9-zhI">
+                                        <rect key="frame" x="312" y="26" width="55" height="36"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="55" id="XJM-iH-haz"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="14"/>
+                                        <state key="normal" title="Logout">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="logoutButtonTapped:" destination="SOK-BD-oO8" eventType="touchUpInside" id="6r0-56-TnS"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.29064556959999999" green="0.65293544530000003" blue="0.48994898799999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="7mh-07-NGy"/>
+                                    <constraint firstAttribute="bottom" secondItem="AWT-h9-zhI" secondAttribute="bottom" constant="2" id="Ij5-Ct-Yem"/>
+                                    <constraint firstItem="AWT-h9-zhI" firstAttribute="top" secondItem="Dy8-T4-7Rm" secondAttribute="top" constant="26" id="gud-AG-XvA"/>
+                                    <constraint firstAttribute="trailing" secondItem="AWT-h9-zhI" secondAttribute="trailing" constant="8" id="tFY-YU-svH"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Dy8-T4-7Rm" firstAttribute="leading" secondItem="zgh-Sd-cQf" secondAttribute="leading" id="8Fr-Oc-i3Y"/>
+                            <constraint firstItem="Dy8-T4-7Rm" firstAttribute="top" secondItem="zgh-Sd-cQf" secondAttribute="top" id="G1b-sR-ua4"/>
+                            <constraint firstAttribute="trailing" secondItem="Dy8-T4-7Rm" secondAttribute="trailing" id="bDr-Bl-JNa"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JqH-Vq-XYh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1703" y="547"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="h4p-tb-sB8">
