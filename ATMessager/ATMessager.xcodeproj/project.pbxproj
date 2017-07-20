@@ -7,19 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		175080681F208B6400EBBFFD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 175080671F208B6400EBBFFD /* GoogleService-Info.plist */; };
 		175B612C1F1F2EBD0013919B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175B612B1F1F2EBD0013919B /* AppDelegate.swift */; };
 		175B61311F1F2EBD0013919B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 175B612F1F1F2EBD0013919B /* Main.storyboard */; };
 		175B61331F1F2EBD0013919B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 175B61321F1F2EBD0013919B /* Assets.xcassets */; };
 		175B61361F1F2EBD0013919B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 175B61341F1F2EBD0013919B /* LaunchScreen.storyboard */; };
 		175F3D6B1F1F6DDA00A06997 /* FirebaseUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175F3D6A1F1F6DDA00A06997 /* FirebaseUtils.swift */; };
 		175F3D6D1F1F6E3100A06997 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175F3D6C1F1F6E3100A06997 /* LoginViewController.swift */; };
-		175F3D6F1F1F6E5700A06997 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175F3D6E1F1F6E5700A06997 /* SignUpViewController.swift */; };
 		175F3D721F1F6E8100A06997 /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175F3D711F1F6E8100A06997 /* UserListViewController.swift */; };
 		175F3D741F1F6F0900A06997 /* AppFeatures.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 175F3D731F1F6F0900A06997 /* AppFeatures.rtf */; };
 		980D12E9DCFF38FFD361D3F4 /* Pods_ATMessager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F1FF8DBE2B6498E25F9045C /* Pods_ATMessager.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		175080671F208B6400EBBFFD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		175B61281F1F2EBD0013919B /* ATMessager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ATMessager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		175B612B1F1F2EBD0013919B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		175B61301F1F2EBD0013919B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -28,7 +29,6 @@
 		175B61371F1F2EBD0013919B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		175F3D6A1F1F6DDA00A06997 /* FirebaseUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseUtils.swift; sourceTree = "<group>"; };
 		175F3D6C1F1F6E3100A06997 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		175F3D6E1F1F6E5700A06997 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		175F3D711F1F6E8100A06997 /* UserListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserListViewController.swift; sourceTree = "<group>"; };
 		175F3D731F1F6F0900A06997 /* AppFeatures.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; name = AppFeatures.rtf; path = ATMessager/AppFeatures.rtf; sourceTree = "<group>"; };
 		3F1FF8DBE2B6498E25F9045C /* Pods_ATMessager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ATMessager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,6 +75,7 @@
 				175F3D661F1F6D6D00A06997 /* UI */,
 				175F3D651F1F6D6000A06997 /* ViewController */,
 				175B61371F1F2EBD0013919B /* Info.plist */,
+				175080671F208B6400EBBFFD /* GoogleService-Info.plist */,
 			);
 			path = ATMessager;
 			sourceTree = "<group>";
@@ -83,7 +84,6 @@
 			isa = PBXGroup;
 			children = (
 				175F3D6C1F1F6E3100A06997 /* LoginViewController.swift */,
-				175F3D6E1F1F6E5700A06997 /* SignUpViewController.swift */,
 				175F3D711F1F6E8100A06997 /* UserListViewController.swift */,
 			);
 			name = ViewController;
@@ -204,6 +204,7 @@
 			files = (
 				175B61361F1F2EBD0013919B /* LaunchScreen.storyboard in Resources */,
 				175F3D741F1F6F0900A06997 /* AppFeatures.rtf in Resources */,
+				175080681F208B6400EBBFFD /* GoogleService-Info.plist in Resources */,
 				175B61331F1F2EBD0013919B /* Assets.xcassets in Resources */,
 				175B61311F1F2EBD0013919B /* Main.storyboard in Resources */,
 			);
@@ -267,7 +268,6 @@
 				175F3D721F1F6E8100A06997 /* UserListViewController.swift in Sources */,
 				175F3D6D1F1F6E3100A06997 /* LoginViewController.swift in Sources */,
 				175F3D6B1F1F6DDA00A06997 /* FirebaseUtils.swift in Sources */,
-				175F3D6F1F1F6E5700A06997 /* SignUpViewController.swift in Sources */,
 				175B612C1F1F2EBD0013919B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

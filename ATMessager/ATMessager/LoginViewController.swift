@@ -7,14 +7,24 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    
+    // MARK: UIButton Action
+    //1] Login
+    @IBAction func loginButtonTapped(_ sender: UIButton) {
+       
+        
+    }
+    
+    //2] SignUp
+    @IBAction func signUpButtonTapped(_ sender: UIButton) {
+        
+        
     }
 }
