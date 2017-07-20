@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class UserListViewController: UIViewController {
 
@@ -17,6 +18,14 @@ class UserListViewController: UIViewController {
     //1] Logout Firebase.
     @IBAction func logoutButtonTapped(_ sender: Any) {
         
+        if FIRAuth.auth()?.currentUser != nil {
         
+            do {
+                try FIRAuth.auth()?.signOut()
+                self.navigationController?.popViewController(animated: true)
+            } catch let error as NSError {
+                print(error.localizedDescription)
+            }
+        }
     }
 }

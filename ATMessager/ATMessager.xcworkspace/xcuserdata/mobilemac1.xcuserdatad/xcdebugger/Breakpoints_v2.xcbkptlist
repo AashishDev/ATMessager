@@ -6,17 +6,49 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ATMessager/LoginViewController.swift"
-            timestampString = "522236553.249415"
+            filePath = "ATMessager/SignupViewController.swift"
+            timestampString = "522242210.001884"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101"
-            landmarkName = "signUpButtonTapped(_:)"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "saveUserDetails(user:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ATMessager.SignupViewController.saveUserDetails (user : Swift.Optional&lt;__ObjC.FIRUser&gt;) -&gt; ()"
+                  moduleName = "ATMessager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mobilemac1/Desktop/ATMessager/ATMessager/ATMessager/SignupViewController.swift"
+                  timestampString = "522242452.531102"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ATMessager.SignupViewController.saveUserDetails (user : Swift.Optional&lt;__ObjC.FIRUser&gt;) -&gt; ()"
+                  moduleName = "ATMessager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mobilemac1/Desktop/ATMessager/ATMessager/ATMessager/SignupViewController.swift"
+                  timestampString = "522242452.533247"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "295">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1747732B1F20BC84006F20E7 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1747732A1F20BC84006F20E7 /* SignupViewController.swift */; };
 		175080681F208B6400EBBFFD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 175080671F208B6400EBBFFD /* GoogleService-Info.plist */; };
 		175B612C1F1F2EBD0013919B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175B612B1F1F2EBD0013919B /* AppDelegate.swift */; };
 		175B61311F1F2EBD0013919B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 175B612F1F1F2EBD0013919B /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1747732A1F20BC84006F20E7 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		175080671F208B6400EBBFFD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		175B61281F1F2EBD0013919B /* ATMessager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ATMessager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		175B612B1F1F2EBD0013919B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 			children = (
 				175F3D6C1F1F6E3100A06997 /* LoginViewController.swift */,
 				175F3D711F1F6E8100A06997 /* UserListViewController.swift */,
+				1747732A1F20BC84006F20E7 /* SignupViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 			files = (
 				175F3D721F1F6E8100A06997 /* UserListViewController.swift in Sources */,
 				175F3D6D1F1F6E3100A06997 /* LoginViewController.swift in Sources */,
+				1747732B1F20BC84006F20E7 /* SignupViewController.swift in Sources */,
 				175F3D6B1F1F6DDA00A06997 /* FirebaseUtils.swift in Sources */,
 				175B612C1F1F2EBD0013919B /* AppDelegate.swift in Sources */,
 			);
