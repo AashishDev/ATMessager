@@ -13,12 +13,17 @@ import FirebaseDatabase
 class UserListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     var userList = [User]()
+    let indicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
     @IBOutlet weak var tableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //A Table Height & Get User listing
+        //1 Activity Indicator
+        indicator.center = self.view.center
+        view.addSubview(indicator)
+        
+        //2 Table Height & Get User listing
         tableView.rowHeight = 65
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "UserCell")
         getUserList()
@@ -27,7 +32,8 @@ class UserListViewController: UIViewController, UITableViewDelegate, UITableView
     
     // MARK: Fetch user list 
     func getUserList(){
-        
+       
+        indicator.startAnimating()
         let dbRef = FIRDatabase.database().reference()
         let userID = FIRAuth.auth()?.currentUser?.uid
         dbRef.child("Users").observeSingleEvent(of: .value, with: { (snapshot) in
@@ -42,10 +48,13 @@ class UserListViewController: UIViewController, UITableViewDelegate, UITableView
                     self.userList.append(user)
                 }
             }
+            self.indicator.stopAnimating()
             //2] Reload Table Cell
             self.tableView.reloadData()
             
         }) { (error) in
+            
+            self.indicator.stopAnimating()
             print(error.localizedDescription)
         }
     }

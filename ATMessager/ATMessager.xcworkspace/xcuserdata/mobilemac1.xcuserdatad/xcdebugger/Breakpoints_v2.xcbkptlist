@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ATMessager/SignupViewController.swift"
-            timestampString = "522242210.001884"
+            timestampString = "522304108.532084"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
             landmarkName = "saveUserDetails(user:)"
             landmarkType = "7">
             <Locations>

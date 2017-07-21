@@ -12,6 +12,7 @@ import FirebaseAuth
 
 class SignupViewController: UIViewController {
     
+    let indicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var fullNameField: UITextField!
@@ -20,6 +21,10 @@ class SignupViewController: UIViewController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //1 Activity Indicator
+        indicator.center = self.view.center
+        view.addSubview(indicator)
     }
     override func viewWillAppear(_ animated: Bool) {
         emailField.text = ""
@@ -51,8 +56,10 @@ class SignupViewController: UIViewController {
    // MARK: UserDefined Function
     func createNewAccount() {
         
+        indicator.startAnimating()
         FIRAuth.auth()?.createUser(withEmail: emailField.text!, password: passwordField.text!, completion: { (user, error) in
             
+            self.indicator.stopAnimating()
             if error == nil { //1 Successfully Signup
                 
                 self.saveUserDetails(user:user)

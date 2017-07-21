@@ -12,10 +12,21 @@ import FirebaseAuth
 
 class LoginViewController: UIViewController {
     
+    let indicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //1 Activity Indicator
+        indicator.center = self.view.center
+        view.addSubview(indicator)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        emailTextField.text = "sonu@g.com"
+        passwordTextField.text = "abc123"
     }
     
     // MARK: UIButton Action
@@ -33,8 +44,10 @@ class LoginViewController: UIViewController {
             
         } else {
             
+            indicator.startAnimating()
             FIRAuth.auth()?.signIn(withEmail: self.emailTextField.text!, password: self.passwordTextField.text!) { (user, error) in
                 
+                self.indicator.stopAnimating()
                 if error == nil {
                     
                     //Print into the console if successfully logged in
