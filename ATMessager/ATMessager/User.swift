@@ -15,7 +15,8 @@ class User: NSObject {
     var mobile = ""
     var email = ""
     var location = ""
-    
+    var userphoto = ""
+
     override init () {
         // uncomment this line if your class has been inherited from any other class
         //super.init()
@@ -29,5 +30,9 @@ class User: NSObject {
         name = dictionary["name"] as! String
         mobile = dictionary["mobile"] as! String
         location = dictionary["location"] as! String
+        if let val = dictionary["userPhoto"] {
+            self.userphoto = val as! String
+        }
+       
     }
 }

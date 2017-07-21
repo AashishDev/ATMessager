@@ -24,8 +24,8 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WgF-69-AGa">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bIY-OE-HeA">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bIY-OE-HeA">
+                                        <rect key="frame" x="-17" y="-8" width="375" height="647"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ATMessager" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2rg-c1-RXA">
                                                 <rect key="frame" x="10" y="100" width="355" height="55"/>
@@ -181,14 +181,14 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user_avtar" translatesAutoresizingMaskIntoConstraints="NO" id="36u-aF-61m">
-                                        <rect key="frame" x="0.0" y="20" width="40" height="40"/>
+                                        <rect key="frame" x="5" y="30" width="30" height="30"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="40" id="CU5-ZK-F0Q"/>
-                                            <constraint firstAttribute="height" constant="40" id="QdO-mH-x2D"/>
+                                            <constraint firstAttribute="width" constant="30" id="CU5-ZK-F0Q"/>
+                                            <constraint firstAttribute="height" constant="30" id="QdO-mH-x2D"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="you" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dCB-0e-gwq">
-                                        <rect key="frame" x="38" y="35.5" width="45" height="23.5"/>
+                                        <rect key="frame" x="37" y="35.5" width="45" height="23.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="45" id="2N4-dG-UgK"/>
                                         </constraints>
@@ -218,9 +218,9 @@
                                     <constraint firstItem="AWT-h9-zhI" firstAttribute="top" secondItem="Dy8-T4-7Rm" secondAttribute="top" constant="26" id="gud-AG-XvA"/>
                                     <constraint firstAttribute="bottom" secondItem="dCB-0e-gwq" secondAttribute="bottom" constant="5" id="mCq-Jr-TKv"/>
                                     <constraint firstAttribute="trailing" secondItem="AWT-h9-zhI" secondAttribute="trailing" constant="8" id="tFY-YU-svH"/>
-                                    <constraint firstItem="dCB-0e-gwq" firstAttribute="leading" secondItem="36u-aF-61m" secondAttribute="trailing" constant="-2" id="unN-NT-yLR"/>
+                                    <constraint firstItem="dCB-0e-gwq" firstAttribute="leading" secondItem="36u-aF-61m" secondAttribute="trailing" constant="2" id="unN-NT-yLR"/>
                                     <constraint firstAttribute="bottom" secondItem="36u-aF-61m" secondAttribute="bottom" constant="4" id="yHK-qM-AIL"/>
-                                    <constraint firstItem="36u-aF-61m" firstAttribute="leading" secondItem="Dy8-T4-7Rm" secondAttribute="leading" id="zZn-kb-lCR"/>
+                                    <constraint firstItem="36u-aF-61m" firstAttribute="leading" secondItem="Dy8-T4-7Rm" secondAttribute="leading" constant="5" id="zZn-kb-lCR"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Kkc-pi-Ekn">
@@ -246,6 +246,7 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="Kkc-pi-Ekn" id="dt0-pl-6E8"/>
+                        <outlet property="userPhotoImg" destination="36u-aF-61m" id="W7C-fs-4Qr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JqH-Vq-XYh" userLabel="First Responder" sceneMemberID="firstResponder"/>

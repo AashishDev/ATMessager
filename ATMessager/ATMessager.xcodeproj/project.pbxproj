@@ -25,6 +25,7 @@
 /* Begin PBXFileReference section */
 		1747732A1F20BC84006F20E7 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		1747732D1F20CF43006F20E7 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		174C9C921F2208CB009AC02B /* ATMessager-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ATMessager-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		175080671F208B6400EBBFFD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		17599CB61F21C3F60063D392 /* Sticker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sticker.png; sourceTree = "<group>"; };
 		175B61281F1F2EBD0013919B /* ATMessager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ATMessager.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -92,6 +93,7 @@
 				175F3D651F1F6D6000A06997 /* ViewController */,
 				175B61371F1F2EBD0013919B /* Info.plist */,
 				175080671F208B6400EBBFFD /* GoogleService-Info.plist */,
+				174C9C921F2208CB009AC02B /* ATMessager-Bridging-Header.h */,
 			);
 			path = ATMessager;
 			sourceTree = "<group>";
@@ -192,6 +194,7 @@
 				TargetAttributes = {
 					175B61271F1F2EBD0013919B = {
 						CreatedOnToolsVersion = 8.3.1;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -414,10 +417,13 @@
 			baseConfigurationReference = CF4854A2598FD36177547E45 /* Pods-ATMessager.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = ATMessager/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Firebase.ATMessager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ATMessager-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -427,10 +433,12 @@
 			baseConfigurationReference = 616832651EABDA2FCAC6FA66 /* Pods-ATMessager.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = ATMessager/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Firebase.ATMessager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ATMessager-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
