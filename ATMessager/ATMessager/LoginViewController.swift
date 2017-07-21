@@ -18,6 +18,8 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        Utils.showActivty(vwController: self)
+        
         //1 Activity Indicator
         indicator.center = self.view.center
         view.addSubview(indicator)

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1747732B1F20BC84006F20E7 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1747732A1F20BC84006F20E7 /* SignupViewController.swift */; };
 		1747732E1F20CF43006F20E7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1747732D1F20CF43006F20E7 /* User.swift */; };
+		174C9C981F221E41009AC02B /* InstagramActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174C9C971F221E41009AC02B /* InstagramActivityIndicator.swift */; };
+		174C9C9A1F221E6D009AC02B /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174C9C991F221E6D009AC02B /* Utils.swift */; };
 		175080681F208B6400EBBFFD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 175080671F208B6400EBBFFD /* GoogleService-Info.plist */; };
 		17599CB71F21C3F60063D392 /* Sticker.png in Resources */ = {isa = PBXBuildFile; fileRef = 17599CB61F21C3F60063D392 /* Sticker.png */; };
 		175B612C1F1F2EBD0013919B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175B612B1F1F2EBD0013919B /* AppDelegate.swift */; };
@@ -26,6 +28,8 @@
 		1747732A1F20BC84006F20E7 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		1747732D1F20CF43006F20E7 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		174C9C921F2208CB009AC02B /* ATMessager-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ATMessager-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		174C9C971F221E41009AC02B /* InstagramActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstagramActivityIndicator.swift; sourceTree = "<group>"; };
+		174C9C991F221E6D009AC02B /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		175080671F208B6400EBBFFD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		17599CB61F21C3F60063D392 /* Sticker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sticker.png; sourceTree = "<group>"; };
 		175B61281F1F2EBD0013919B /* ATMessager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ATMessager.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,6 +67,22 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		174C9C951F221DDB009AC02B /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				174C9C991F221E6D009AC02B /* Utils.swift */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		174C9C961F221E36009AC02B /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				174C9C971F221E41009AC02B /* InstagramActivityIndicator.swift */,
+			);
+			name = Lib;
+			sourceTree = "<group>";
+		};
 		175B611F1F1F2EBC0013919B = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +106,7 @@
 		175B612A1F1F2EBD0013919B /* ATMessager */ = {
 			isa = PBXGroup;
 			children = (
+				174C9C961F221E36009AC02B /* Lib */,
 				1747732C1F20CF2C006F20E7 /* Model */,
 				175F3D681F1F6DA400A06997 /* Utils */,
 				175F3D671F1F6D8400A06997 /* AppDelegate */,
@@ -129,6 +150,7 @@
 		175F3D681F1F6DA400A06997 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				174C9C951F221DDB009AC02B /* Utils */,
 				175F3D691F1F6DAB00A06997 /* GoogleFirebase */,
 			);
 			name = Utils;
@@ -286,12 +308,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				174C9C981F221E41009AC02B /* InstagramActivityIndicator.swift in Sources */,
 				175F3D721F1F6E8100A06997 /* UserListViewController.swift in Sources */,
 				175F3D6D1F1F6E3100A06997 /* LoginViewController.swift in Sources */,
 				1747732E1F20CF43006F20E7 /* User.swift in Sources */,
 				1747732B1F20BC84006F20E7 /* SignupViewController.swift in Sources */,
 				175F3D6B1F1F6DDA00A06997 /* FirebaseUtils.swift in Sources */,
 				175B612C1F1F2EBD0013919B /* AppDelegate.swift in Sources */,
+				174C9C9A1F221E6D009AC02B /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
