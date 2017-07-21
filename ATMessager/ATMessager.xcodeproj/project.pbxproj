@@ -10,6 +10,7 @@
 		1747732B1F20BC84006F20E7 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1747732A1F20BC84006F20E7 /* SignupViewController.swift */; };
 		1747732E1F20CF43006F20E7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1747732D1F20CF43006F20E7 /* User.swift */; };
 		175080681F208B6400EBBFFD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 175080671F208B6400EBBFFD /* GoogleService-Info.plist */; };
+		17599CB71F21C3F60063D392 /* Sticker.png in Resources */ = {isa = PBXBuildFile; fileRef = 17599CB61F21C3F60063D392 /* Sticker.png */; };
 		175B612C1F1F2EBD0013919B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175B612B1F1F2EBD0013919B /* AppDelegate.swift */; };
 		175B61311F1F2EBD0013919B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 175B612F1F1F2EBD0013919B /* Main.storyboard */; };
 		175B61331F1F2EBD0013919B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 175B61321F1F2EBD0013919B /* Assets.xcassets */; };
@@ -25,6 +26,7 @@
 		1747732A1F20BC84006F20E7 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		1747732D1F20CF43006F20E7 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		175080671F208B6400EBBFFD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		17599CB61F21C3F60063D392 /* Sticker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sticker.png; sourceTree = "<group>"; };
 		175B61281F1F2EBD0013919B /* ATMessager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ATMessager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		175B612B1F1F2EBD0013919B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		175B61301F1F2EBD0013919B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 		175B611F1F1F2EBC0013919B = {
 			isa = PBXGroup;
 			children = (
+				17599CB61F21C3F60063D392 /* Sticker.png */,
 				175F3D731F1F6F0900A06997 /* AppFeatures.rtf */,
 				175B612A1F1F2EBD0013919B /* ATMessager */,
 				175B61291F1F2EBD0013919B /* Products */,
@@ -217,6 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				175B61361F1F2EBD0013919B /* LaunchScreen.storyboard in Resources */,
+				17599CB71F21C3F60063D392 /* Sticker.png in Resources */,
 				175F3D741F1F6F0900A06997 /* AppFeatures.rtf in Resources */,
 				175080681F208B6400EBBFFD /* GoogleService-Info.plist in Resources */,
 				175B61331F1F2EBD0013919B /* Assets.xcassets in Resources */,
