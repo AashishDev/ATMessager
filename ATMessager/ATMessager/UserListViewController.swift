@@ -38,13 +38,12 @@ class UserListViewController: UIViewController, UITableViewDelegate, UITableView
         
         //3 Table Height & Get User listing
         tableView.tableFooterView = UIView()
-        tableView.rowHeight = 65
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "UserCell")
+        tableView.rowHeight = 75
         getUserList()
     }
     
     
-    // MARK: Fetch user list 
+    // MARK: Fetch user list
     func getUserList(){
        
         indicator.startAnimating()
@@ -88,14 +87,23 @@ class UserListViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "UserCell")
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "UserCell", for: indexPath) as! UserTableViewCell
+        
         let user = userList[indexPath.row]
-        cell.textLabel?.text = user.name
-        cell.detailTextLabel?.text = user.location
+        cell.nameLabel.text = user.name
+        cell.locationLabel.text = user.location
+
+        let imageUrlString = user.userphoto
+        if imageUrlString.characters.count > 0 {
+            cell.userImageView.sd_setImage(with: URL(string: imageUrlString))
+            cell.userImageView.layer.cornerRadius = cell.userImageView.frame.size.height/2
+            cell.userImageView.clipsToBounds = true
+        }
         return cell
     }
     
-    // MARK: UIButton Action
+// MARK: UIButton Action
     
     //1] Logout Button
     @IBAction func logoutButtonTapped(_ sender: Any) {
@@ -111,18 +119,10 @@ class UserListViewController: UIViewController, UITableViewDelegate, UITableView
         }
     }
     
+    
     //2] Profile Button
     @IBAction func profileImgBtnTapped(_ sender: UIButton) {
         
-        let loginUser = self.loginUser[0]
-        let imageUrlString = loginUser.userphoto
-      /*  if imageUrlString.characters.count > 0{
-        
-        userPhotoImg.sd_setImage(with: URL(string: imageUrlString))
-            
-        }
-        else{
-           */
             if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum){
                 print("Button capture")
                 

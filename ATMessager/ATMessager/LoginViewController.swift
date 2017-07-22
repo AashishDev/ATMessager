@@ -18,7 +18,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        Utils.showActivty(vwController: self)
+        //Utils.showActivty(vwController: self)
         
         //1 Activity Indicator
         indicator.center = self.view.center
@@ -27,8 +27,8 @@ class LoginViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         
-        emailTextField.text = "h@g.com"
-        passwordTextField.text = "abc123"
+        //emailTextField.text = "b@g.com"
+        //passwordTextField.text = "abc123"
     }
     
     // MARK: UIButton Action

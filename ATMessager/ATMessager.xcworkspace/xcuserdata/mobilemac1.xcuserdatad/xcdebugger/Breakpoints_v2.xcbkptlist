@@ -26,7 +26,7 @@
                   moduleName = "ATMessager"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/mobilemac1/Desktop/ATMessager/ATMessager/ATMessager/SignupViewController.swift"
-                  timestampString = "522331251.920384"
+                  timestampString = "522407527.165155"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "80"
@@ -41,7 +41,7 @@
                   moduleName = "ATMessager"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/mobilemac1/Desktop/ATMessager/ATMessager/ATMessager/SignupViewController.swift"
-                  timestampString = "522331251.922654"
+                  timestampString = "522407527.16651"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "80"
@@ -64,6 +64,22 @@
             startingLineNumber = "32"
             endingLineNumber = "32"
             landmarkName = "init(dictionary:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ATMessager/UserListViewController.swift"
+            timestampString = "522395441.513443"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
+            landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

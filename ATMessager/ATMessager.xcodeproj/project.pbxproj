@@ -21,6 +21,7 @@
 		175F3D6D1F1F6E3100A06997 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175F3D6C1F1F6E3100A06997 /* LoginViewController.swift */; };
 		175F3D721F1F6E8100A06997 /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175F3D711F1F6E8100A06997 /* UserListViewController.swift */; };
 		175F3D741F1F6F0900A06997 /* AppFeatures.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 175F3D731F1F6F0900A06997 /* AppFeatures.rtf */; };
+		17600B341F2315FB009B0053 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17600B331F2315FB009B0053 /* UserTableViewCell.swift */; };
 		980D12E9DCFF38FFD361D3F4 /* Pods_ATMessager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F1FF8DBE2B6498E25F9045C /* Pods_ATMessager.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +43,7 @@
 		175F3D6C1F1F6E3100A06997 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		175F3D711F1F6E8100A06997 /* UserListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserListViewController.swift; sourceTree = "<group>"; };
 		175F3D731F1F6F0900A06997 /* AppFeatures.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; name = AppFeatures.rtf; path = ATMessager/AppFeatures.rtf; sourceTree = "<group>"; };
+		17600B331F2315FB009B0053 /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		3F1FF8DBE2B6498E25F9045C /* Pods_ATMessager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ATMessager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		616832651EABDA2FCAC6FA66 /* Pods-ATMessager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ATMessager.release.xcconfig"; path = "Pods/Target Support Files/Pods-ATMessager/Pods-ATMessager.release.xcconfig"; sourceTree = "<group>"; };
 		CF4854A2598FD36177547E45 /* Pods-ATMessager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ATMessager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ATMessager/Pods-ATMessager.debug.xcconfig"; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 		175F3D661F1F6D6D00A06997 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				17600B321F2315CE009B0053 /* UserTableViewCell */,
 				175B612F1F1F2EBD0013919B /* Main.storyboard */,
 				175B61321F1F2EBD0013919B /* Assets.xcassets */,
 				175B61341F1F2EBD0013919B /* LaunchScreen.storyboard */,
@@ -162,6 +165,14 @@
 				175F3D6A1F1F6DDA00A06997 /* FirebaseUtils.swift */,
 			);
 			name = GoogleFirebase;
+			sourceTree = "<group>";
+		};
+		17600B321F2315CE009B0053 /* UserTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				17600B331F2315FB009B0053 /* UserTableViewCell.swift */,
+			);
+			name = UserTableViewCell;
 			sourceTree = "<group>";
 		};
 		4CEB0470EC56FE9BCB82CDE1 /* Pods */ = {
@@ -309,6 +320,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				174C9C981F221E41009AC02B /* InstagramActivityIndicator.swift in Sources */,
+				17600B341F2315FB009B0053 /* UserTableViewCell.swift in Sources */,
 				175F3D721F1F6E8100A06997 /* UserListViewController.swift in Sources */,
 				175F3D6D1F1F6E3100A06997 /* LoginViewController.swift in Sources */,
 				1747732E1F20CF43006F20E7 /* User.swift in Sources */,
