@@ -142,6 +142,13 @@ class UserListViewController: UIViewController, UITableViewDelegate, UITableView
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    
+        let chatView = ChatViewController()
+        chatView.senderDisplayName = "Rohan"
+        self.navigationController?.pushViewController(chatView, animated: true)
+    }
+    
 // MARK: UIButton Action
     
     //1] Logout Button

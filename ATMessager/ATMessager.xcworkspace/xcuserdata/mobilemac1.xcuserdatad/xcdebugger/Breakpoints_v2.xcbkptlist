@@ -26,7 +26,7 @@
                   moduleName = "ATMessager"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/mobilemac1/Desktop/ATMessager/ATMessager/ATMessager/SignupViewController.swift"
-                  timestampString = "522567642.532227"
+                  timestampString = "522587338.380689"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "80"
@@ -41,7 +41,7 @@
                   moduleName = "ATMessager"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/mobilemac1/Desktop/ATMessager/ATMessager/ATMessager/SignupViewController.swift"
-                  timestampString = "522567642.533875"
+                  timestampString = "522587338.383205"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "80"
@@ -73,13 +73,59 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ATMessager/UserListViewController.swift"
-            timestampString = "522569052.896316"
+            filePath = "ATMessager/DemoConversation.swift"
+            timestampString = "522584491.588985"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "143"
-            endingLineNumber = "143"
-            landmarkName = "tableView(_:cellForRowAt:)"
+            startingLineNumber = "104"
+            endingLineNumber = "104">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ATMessager/DemoConversation.swift"
+            timestampString = "522584491.588985"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "getAvatar(_:)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ATMessager/UserListViewController.swift"
+            timestampString = "522584635.514199"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
+            landmarkName = "tableView(_:didSelectRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ATMessager/ChatViewController.swift"
+            timestampString = "522586316.698881"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
+            landmarkName = "collectionView(_:attributedTextForMessageBubbleTopLabelAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
