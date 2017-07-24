@@ -11,4 +11,5 @@ target 'ATMessager' do
   pod 'Firebase/Auth'
   pod 'Firebase/Storage'
   pod 'SDWebImage'
+  pod 'JSQMessagesViewController'
 end
