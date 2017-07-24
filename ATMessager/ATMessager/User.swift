@@ -16,6 +16,8 @@ class User: NSObject {
     var email = ""
     var location = ""
     var userphoto = ""
+    var online = ""
+
 
     override init () {
         // uncomment this line if your class has been inherited from any other class
@@ -33,6 +35,8 @@ class User: NSObject {
         if let val = dictionary["userPhoto"] {
             self.userphoto = val as! String
         }
-       
+        if let val = dictionary["online"] {
+            self.online = val as! String
+        }
     }
 }

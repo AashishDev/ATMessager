@@ -16,6 +16,7 @@ import SDWebImage
 
 class UserListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
+    let ref = FIRDatabase.database().reference(withPath: "Users")
     var userList = [User]()
     var loginUser = [User]()
     var imagePicker = UIImagePickerController()
@@ -40,6 +41,34 @@ class UserListViewController: UIViewController, UITableViewDelegate, UITableView
         tableView.tableFooterView = UIView()
         tableView.rowHeight = 75
         getUserList()
+        
+        ref.observe(.value, with: { snapshot in
+            
+            
+            var newItems: [User] = []
+            let userID = FIRAuth.auth()?.currentUser?.uid
+
+            let value = snapshot.value as? NSDictionary
+            for (key, data) in value! {
+                let keyName = key as! String
+                let user = User.init(dictionary: data as! Dictionary<String, AnyObject>)
+                if userID != keyName{
+                    
+                    newItems.append(user)
+                }
+                else{
+                    self.loginUser.append(user);
+                    let imageUrlString = user.userphoto
+                    if imageUrlString.characters.count > 0{
+                        self.userPhotoImg.sd_setImage(with: URL(string: imageUrlString))
+                    }
+                }
+            }
+
+            self.userList = newItems
+            self.tableView.reloadData()
+        })
+        
     }
     
     
@@ -93,6 +122,16 @@ class UserListViewController: UIViewController, UITableViewDelegate, UITableView
         let user = userList[indexPath.row]
         cell.nameLabel.text = user.name
         cell.locationLabel.text = user.location
+        cell.onlineView.layer.cornerRadius = cell.onlineView.frame.size.height/2
+        cell.onlineView.clipsToBounds = true
+        
+        let onlineStatus = user.online
+        if onlineStatus == "1" {
+            cell.onlineView.isHidden = false;
+        }
+        else{
+            cell.onlineView.isHidden = true;
+        }
 
         let imageUrlString = user.userphoto
         if imageUrlString.characters.count > 0 {
@@ -109,8 +148,12 @@ class UserListViewController: UIViewController, UITableViewDelegate, UITableView
     @IBAction func logoutButtonTapped(_ sender: Any) {
         
         if FIRAuth.auth()?.currentUser != nil {
-        
             do {
+                
+                // Set Online Status
+                let dbRef = FIRDatabase.database().reference()
+                dbRef.child("Users").child(FIRAuth.auth()!.currentUser!.uid).updateChildValues(["online": "0"])
+                
                 try FIRAuth.auth()?.signOut()
                 self.navigationController?.popViewController(animated: true)
             } catch let error as NSError {

@@ -246,7 +246,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="102" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ecg-pR-sft">
-                                                    <rect key="frame" x="63" y="12" width="294" height="22"/>
+                                                    <rect key="frame" x="63" y="12" width="252" height="22"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="22" id="8TV-SB-uhX"/>
                                                     </constraints>
@@ -263,11 +263,21 @@
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="D1E-yJ-Mmb">
+                                                    <rect key="frame" x="45" y="13" width="12" height="12"/>
+                                                    <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="12" id="0ts-fi-lpx"/>
+                                                        <constraint firstAttribute="height" constant="12" id="Xde-4G-BxL"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="D1E-yJ-Mmb" firstAttribute="top" secondItem="08V-eO-KOs" secondAttribute="top" constant="13" id="15d-zz-HA6"/>
                                                 <constraint firstItem="CpJ-UW-9fv" firstAttribute="centerY" secondItem="08V-eO-KOs" secondAttribute="centerY" id="4pb-0p-fBg"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="ecg-pR-sft" secondAttribute="trailing" constant="10" id="EWh-gI-YKE"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="ecg-pR-sft" secondAttribute="trailing" constant="52" id="EWh-gI-YKE"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="7WZ-Ab-sIw" secondAttribute="trailing" constant="10" id="IS1-ns-VTw"/>
+                                                <constraint firstItem="D1E-yJ-Mmb" firstAttribute="leading" secondItem="08V-eO-KOs" secondAttribute="leading" constant="45" id="Y3o-kB-MKp"/>
                                                 <constraint firstItem="7WZ-Ab-sIw" firstAttribute="leading" secondItem="CpJ-UW-9fv" secondAttribute="trailing" constant="5" id="a76-Y9-3Zv"/>
                                                 <constraint firstItem="ecg-pR-sft" firstAttribute="leading" secondItem="CpJ-UW-9fv" secondAttribute="trailing" constant="5" id="lqq-dh-LlT"/>
                                                 <constraint firstItem="CpJ-UW-9fv" firstAttribute="leading" secondItem="08V-eO-KOs" secondAttribute="leading" constant="8" id="u69-S3-g5n"/>
@@ -278,6 +288,7 @@
                                         <connections>
                                             <outlet property="locationLabel" destination="7WZ-Ab-sIw" id="zOk-0m-LSd"/>
                                             <outlet property="nameLabel" destination="ecg-pR-sft" id="xZc-pa-Yws"/>
+                                            <outlet property="onlineView" destination="D1E-yJ-Mmb" id="T63-CU-7RA"/>
                                             <outlet property="userImageView" destination="CpJ-UW-9fv" id="FjG-BD-b6z"/>
                                         </connections>
                                     </tableViewCell>

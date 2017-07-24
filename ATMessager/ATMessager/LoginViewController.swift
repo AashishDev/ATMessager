@@ -27,13 +27,29 @@ class LoginViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         
-        //emailTextField.text = "b@g.com"
-        //passwordTextField.text = "abc123"
+        // Testing Only 
+        emailTextField.text = "b@g.com"
+        passwordTextField.text = "abc123"
+        validateAndLogin()
+
     }
     
     // MARK: UIButton Action
     //1] Login
     @IBAction func loginButtonTapped(_ sender: UIButton) {
+        
+        validateAndLogin()
+    }
+    
+    //2] SignUp
+    @IBAction func signUpButtonTapped(_ sender: UIButton) {
+        
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "SignUp")
+        self.present(vc!, animated: true, completion: nil)
+    }
+    
+
+    func validateAndLogin()  {
         
         if self.emailTextField.text == "" || self.passwordTextField.text == "" {
             
@@ -41,7 +57,6 @@ class LoginViewController: UIViewController {
             
             let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
             alertController.addAction(defaultAction)
-            
             self.present(alertController, animated: true, completion: nil)
             
         } else {
@@ -52,11 +67,11 @@ class LoginViewController: UIViewController {
                 self.indicator.stopAnimating()
                 if error == nil {
                     
-                    //Print into the console if successfully logged in
+                    // Set Online Status
+                    let dbRef = FIRDatabase.database().reference()
+                    dbRef.child("Users").child(FIRAuth.auth()!.currentUser!.uid).updateChildValues(["online": "1"])
+                    
                     print("You have successfully logged in")
-                    if let name = user?.email {
-                        print(name)
-                    }
                     //Go to the UserListViewController if the login is sucessful
                     let vc = self.storyboard?.instantiateViewController(withIdentifier: "UserList")
                     self.navigationController?.pushViewController(vc!, animated: true)
@@ -75,10 +90,4 @@ class LoginViewController: UIViewController {
         }
     }
     
-    //2] SignUp
-    @IBAction func signUpButtonTapped(_ sender: UIButton) {
-        
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "SignUp")
-        self.present(vc!, animated: true, completion: nil)
-    }
 }

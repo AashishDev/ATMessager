@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17437EDA1F25C18A00AFFAF6 /* online.png in Resources */ = {isa = PBXBuildFile; fileRef = 17437ED81F25C18A00AFFAF6 /* online.png */; };
+		17437EDB1F25C18A00AFFAF6 /* online@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17437ED91F25C18A00AFFAF6 /* online@2x.png */; };
 		1747732B1F20BC84006F20E7 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1747732A1F20BC84006F20E7 /* SignupViewController.swift */; };
 		1747732E1F20CF43006F20E7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1747732D1F20CF43006F20E7 /* User.swift */; };
 		174C9C981F221E41009AC02B /* InstagramActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174C9C971F221E41009AC02B /* InstagramActivityIndicator.swift */; };
@@ -28,6 +30,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		17437ED81F25C18A00AFFAF6 /* online.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = online.png; sourceTree = "<group>"; };
+		17437ED91F25C18A00AFFAF6 /* online@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "online@2x.png"; sourceTree = "<group>"; };
 		1747732A1F20BC84006F20E7 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		1747732D1F20CF43006F20E7 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		174C9C921F2208CB009AC02B /* ATMessager-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ATMessager-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
@@ -200,6 +204,8 @@
 		AE80B77F1F23983F007641AC /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				17437ED81F25C18A00AFFAF6 /* online.png */,
+				17437ED91F25C18A00AFFAF6 /* online@2x.png */,
 				AE80B78C1F23B77F007641AC /* chat_icons.png */,
 				AE80B7841F23B295007641AC /* bgImg.jpg */,
 			);
@@ -272,11 +278,13 @@
 				AE80B78D1F23B77F007641AC /* chat_icons.png in Resources */,
 				175B61361F1F2EBD0013919B /* LaunchScreen.storyboard in Resources */,
 				17599CB71F21C3F60063D392 /* Sticker.png in Resources */,
+				17437EDB1F25C18A00AFFAF6 /* online@2x.png in Resources */,
 				175F3D741F1F6F0900A06997 /* AppFeatures.rtf in Resources */,
 				175080681F208B6400EBBFFD /* GoogleService-Info.plist in Resources */,
 				175B61331F1F2EBD0013919B /* Assets.xcassets in Resources */,
 				175B61311F1F2EBD0013919B /* Main.storyboard in Resources */,
 				AE80B7861F23B295007641AC /* bgImg.jpg in Resources */,
+				17437EDA1F25C18A00AFFAF6 /* online.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
