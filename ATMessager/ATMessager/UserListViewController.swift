@@ -144,8 +144,12 @@ class UserListViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     
+        
+        
+        let user = userList[indexPath.row]
         let chatView = ChatViewController()
         chatView.senderDisplayName = "Rohan"
+        chatView.chatUser = user
         self.navigationController?.pushViewController(chatView, animated: true)
     }
     

@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
        
         UINavigationBar.appearance().barTintColor = UIColor(red: 74/255, green: 166/255, blue: 125/255, alpha: 1)
         UINavigationBar.appearance().tintColor = UIColor.white
+      UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
 
         // Firbase Intigration
         FIRApp.configure()

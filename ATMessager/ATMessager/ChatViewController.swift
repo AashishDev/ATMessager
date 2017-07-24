@@ -12,16 +12,21 @@ import FirebaseDatabase
 import FirebaseAuth
 
 class ChatViewController: JSQMessagesViewController {
+    
+    
+    let ref = FIRDatabase.database().reference(withPath: "Conversation")
+    private var newMessageRefHandle: FIRDatabaseHandle?
 
+    
     lazy var outgoingBubbleImageView: JSQMessagesBubbleImage = self.setupOutgoingBubble()
     lazy var incomingBubbleImageView: JSQMessagesBubbleImage = self.setupIncomingBubble()
     
+    var chatUser: User?
     var messages = [JSQMessage]()
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.title = self.senderDisplayName
-        
         self.senderId = FIRAuth.auth()?.currentUser?.uid
         observeMessages()
         
@@ -31,13 +36,12 @@ class ChatViewController: JSQMessagesViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-
+        
         super.viewWillAppear(animated)
         self.navigationController?.isNavigationBarHidden = false
-
-//        self.navigationController?.navigationBar.barTintColor = UIColor(red: 74/255, green: 166/255, blue: 125/255, alpha: 1)
-//        self.navigationController?.navigationBar.tintColor = UIColor.white
-//        self.navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+        //        self.navigationController?.navigationBar.barTintColor = UIColor(red: 74/255, green: 166/255, blue: 125/255, alpha: 1)
+        //        self.navigationController?.navigationBar.tintColor = UIColor.white
+        //        self.navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -45,15 +49,48 @@ class ChatViewController: JSQMessagesViewController {
         self.navigationController?.isNavigationBarHidden = true
     }
     
-    func observeMessages() {
+    private func observeMessages() {
+        
+        let chatUrl = self.senderId + "_" + (self.chatUser?.id)!
+
+       // let messageRef = ref.child(chatUrl)
+        // 1.
+        let messageQuery = ref.child(chatUrl).queryLimited(toLast:25)
+        
+        // 2. We can use the observe method to listen for new
+        // messages being written to the Firebase DB
+        newMessageRefHandle = messageQuery.observe(.childAdded, with: { (snapshot) -> Void in
+            // 3
+            let messageData = snapshot.value as! Dictionary<String, String>
+            
+            if let id = messageData["senderId"] as String!, let name = messageData["senderName"] as String!, let text = messageData["text"] as String!, text.characters.count > 0 {
+                // 4
+                self.addMessage(withId: id, name: name, text: text)
+                
+                // 5
+                self.finishReceivingMessage()
+            } else {
+                print("Error! Could not decode message data")
+            }
+        })
+    }
+    
+    private func addMessage(withId id: String, name: String, text: String) {
+        if let message = JSQMessage(senderId: id, displayName: name, text: text) {
+            messages.append(message)
+        }
+    }
+
+    
+   /* func observeMessages1() {
         
         let message = JSQMessage(senderId: self.senderId, displayName:"Rohan", text: "What is this Black Majic?")
         self.messages.append(message!)
-       
+        
         let message1 = JSQMessage(senderId: "121", displayName:"Testuser", text: "What is this?")
         self.messages.append(message1!)
         self.finishReceivingMessage()
-    }
+    }*/
     
     // MARK: Collection view data source (and related) methods
     
@@ -109,28 +146,29 @@ class ChatViewController: JSQMessagesViewController {
             return NSAttributedString(string: senderDisplayName)
         }
     }
-
+    
     
     // MARK: Pressed Send Button
     
     override func didPressSend(_ button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: Date!) {
-        /*let itemRef = messageRef.childByAutoId() // 1
+        
+        let chatUrl = self.senderId + "_" + (self.chatUser?.id)!
+        let itemRef = ref.child(chatUrl).childByAutoId() // 1
         let messageItem = [ // 2
             "senderId": senderId!,
             "senderName": senderDisplayName!,
             "text": text!,
             ]
+        itemRef.setValue(messageItem) // 3
         
-        itemRef.setValue(messageItem) // 3*/
-        
-        let message = JSQMessage(senderId: self.senderId, displayName:"Rohan", text: "I am fine, How's You")
-        self.messages.append(message!)
+        /* let message = JSQMessage(senderId: self.senderId, displayName:"Rohan", text: "I am fine, How's You")
+         self.messages.append(message!)*/
         JSQSystemSoundPlayer.jsq_playMessageSentSound() // 4
         
         finishSendingMessage() // 5
     }
     
-        
+    
     // MARK: UI and User Interaction
     
     private func setupOutgoingBubble() -> JSQMessagesBubbleImage {
@@ -142,7 +180,7 @@ class ChatViewController: JSQMessagesViewController {
         let bubbleImageFactory = JSQMessagesBubbleImageFactory()
         return bubbleImageFactory!.incomingMessagesBubbleImage(with: UIColor.jsq_messageBubbleLightGray())
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
