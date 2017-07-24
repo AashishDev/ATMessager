@@ -26,7 +26,7 @@
                   moduleName = "ATMessager"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/mobilemac1/Desktop/ATMessager/ATMessager/ATMessager/SignupViewController.swift"
-                  timestampString = "522587338.380689"
+                  timestampString = "522587771.053116"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "80"
@@ -41,7 +41,7 @@
                   moduleName = "ATMessager"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/mobilemac1/Desktop/ATMessager/ATMessager/ATMessager/SignupViewController.swift"
-                  timestampString = "522587338.383205"
+                  timestampString = "522587771.055387"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "80"
@@ -100,31 +100,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ATMessager/UserListViewController.swift"
-            timestampString = "522584635.514199"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "146"
-            endingLineNumber = "146"
-            landmarkName = "tableView(_:didSelectRowAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ATMessager/ChatViewController.swift"
-            timestampString = "522586316.698881"
+            timestampString = "522588578.581303"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
             landmarkName = "collectionView(_:attributedTextForMessageBubbleTopLabelAt:)"
             landmarkType = "7">
          </BreakpointContent>

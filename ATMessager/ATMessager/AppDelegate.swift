@@ -17,6 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
        
+        UINavigationBar.appearance().barTintColor = UIColor(red: 74/255, green: 166/255, blue: 125/255, alpha: 1)
+        UINavigationBar.appearance().tintColor = UIColor.white
+
         // Firbase Intigration
         FIRApp.configure()
         return true

@@ -20,12 +20,29 @@ class ChatViewController: JSQMessagesViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = self.senderDisplayName
+        
         self.senderId = FIRAuth.auth()?.currentUser?.uid
         observeMessages()
         
         // No avatars
         collectionView!.collectionViewLayout.incomingAvatarViewSize = CGSize.zero
         collectionView!.collectionViewLayout.outgoingAvatarViewSize = CGSize.zero
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+
+        super.viewWillAppear(animated)
+        self.navigationController?.isNavigationBarHidden = false
+
+//        self.navigationController?.navigationBar.barTintColor = UIColor(red: 74/255, green: 166/255, blue: 125/255, alpha: 1)
+//        self.navigationController?.navigationBar.tintColor = UIColor.white
+//        self.navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        
+        self.navigationController?.isNavigationBarHidden = true
     }
     
     func observeMessages() {
@@ -94,6 +111,26 @@ class ChatViewController: JSQMessagesViewController {
     }
 
     
+    // MARK: Pressed Send Button
+    
+    override func didPressSend(_ button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: Date!) {
+        /*let itemRef = messageRef.childByAutoId() // 1
+        let messageItem = [ // 2
+            "senderId": senderId!,
+            "senderName": senderDisplayName!,
+            "text": text!,
+            ]
+        
+        itemRef.setValue(messageItem) // 3*/
+        
+        let message = JSQMessage(senderId: self.senderId, displayName:"Rohan", text: "I am fine, How's You")
+        self.messages.append(message!)
+        JSQSystemSoundPlayer.jsq_playMessageSentSound() // 4
+        
+        finishSendingMessage() // 5
+    }
+    
+        
     // MARK: UI and User Interaction
     
     private func setupOutgoingBubble() -> JSQMessagesBubbleImage {
