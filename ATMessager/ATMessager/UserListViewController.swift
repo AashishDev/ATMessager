@@ -150,6 +150,7 @@ class UserListViewController: UIViewController, UITableViewDelegate, UITableView
         let chatView = ChatViewController()
         chatView.senderDisplayName = user.name
         chatView.chatUser = user
+        chatView.loginUser = loginUser[0]
         self.navigationController?.pushViewController(chatView, animated: true)
     }
     

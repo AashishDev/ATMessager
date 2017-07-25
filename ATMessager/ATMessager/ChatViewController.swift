@@ -22,6 +22,7 @@ class ChatViewController: JSQMessagesViewController {
     lazy var incomingBubbleImageView: JSQMessagesBubbleImage = self.setupIncomingBubble()
     
     var chatUser: User?
+    var loginUser: User?
     var messages = [JSQMessage]()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,8 +32,9 @@ class ChatViewController: JSQMessagesViewController {
         observeMessages()
         
         // No avatars
-        collectionView!.collectionViewLayout.incomingAvatarViewSize = CGSize.zero
-        collectionView!.collectionViewLayout.outgoingAvatarViewSize = CGSize.zero
+       // collectionView!.collectionViewLayout.incomingAvatarViewSize = CGSize.zero
+        // collectionView!.collectionViewLayout.incomingAvatarViewSize = CGSize(width: 45, height: 45)
+        //collectionView!.collectionViewLayout.outgoingAvatarViewSize = CGSize(width: 45, height: 45)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -80,17 +82,6 @@ class ChatViewController: JSQMessagesViewController {
         }
     }
 
-    
-   /* func observeMessages1() {
-        
-        let message = JSQMessage(senderId: self.senderId, displayName:"Rohan", text: "What is this Black Majic?")
-        self.messages.append(message!)
-        
-        let message1 = JSQMessage(senderId: "121", displayName:"Testuser", text: "What is this?")
-        self.messages.append(message1!)
-        self.finishReceivingMessage()
-    }*/
-    
     // MARK: Collection view data source (and related) methods
     
     override func collectionView(_ collectionView: JSQMessagesCollectionView!, messageDataForItemAt indexPath: IndexPath!) -> JSQMessageData! {
@@ -121,15 +112,52 @@ class ChatViewController: JSQMessagesViewController {
             cell.textView?.textColor = UIColor.black // 3
         }
         
+        let imageUrlString = "https://firebasestorage.googleapis.com/v0/b/atmessager.appspot.com/o/ProfileImages%2FGSGPzhTfMpS98W6JQrkc2Nzz0Uq1.png?alt=media&token=22a12ac1-cfd7-4efb-b5b3-1a700f8968d2"
+        let url = URL(string: imageUrlString)
+        if imageUrlString.characters.count > 0 {
+            
+            cell.avatarImageView.sd_setImage(with: url, placeholderImage: UIImage(named: "App-Default"), options: []) { (image, error, imageCacheType, imageUrl) in
+                
+               cell.avatarImageView.image = JSQMessagesAvatarImageFactory.circularAvatarImage(image, withDiameter: 88)
+            }
+        }
+        
         return cell
     }
     
     override func collectionView(_ collectionView: JSQMessagesCollectionView!, avatarImageDataForItemAt indexPath: IndexPath!) -> JSQMessageAvatarImageDataSource! {
+       
+        
+        
+        
         return nil
     }
     
     override func collectionView(_ collectionView: JSQMessagesCollectionView!, layout collectionViewLayout: JSQMessagesCollectionViewFlowLayout!, heightForMessageBubbleTopLabelAt indexPath: IndexPath!) -> CGFloat {
-        return 15
+        //return 15
+        
+        /**
+         *  Example on showing or removing senderDisplayName based on user settings.
+         *  This logic should be consistent with what you return from `attributedTextForCellTopLabelAtIndexPath:`
+         */
+  
+        /**
+         *  iOS7-style sender name labels
+         */
+        let currentMessage = self.messages[indexPath.item]
+        
+        if currentMessage.senderId == self.senderId {
+            return 0.0
+        }
+        
+        if indexPath.item - 1 > 0 {
+            let previousMessage = self.messages[indexPath.item - 1]
+            if previousMessage.senderId == currentMessage.senderId {
+                return 0.0
+            }
+        }
+        
+        return kJSQMessagesCollectionViewCellLabelHeightDefault;
     }
     
     override func collectionView(_ collectionView: JSQMessagesCollectionView?, attributedTextForMessageBubbleTopLabelAt indexPath: IndexPath!) -> NSAttributedString? {
@@ -147,6 +175,42 @@ class ChatViewController: JSQMessagesViewController {
     }
     
     
+    override func collectionView(_ collectionView: JSQMessagesCollectionView, attributedTextForCellTopLabelAt indexPath: IndexPath) -> NSAttributedString? {
+        /**
+         *  This logic should be consistent with what you return from `heightForCellTopLabelAtIndexPath:`
+         *  The other label text delegate methods should follow a similar pattern.
+         *
+         *  Show a timestamp for every 3rd message
+         */
+        if (indexPath.item % 3 == 0) {
+            let message = self.messages[indexPath.item]
+            
+            return JSQMessagesTimestampFormatter.shared().attributedTimestamp(for: message.date)
+        }
+        
+        return nil
+    }
+    
+    override func collectionView(_ collectionView: JSQMessagesCollectionView, layout collectionViewLayout: JSQMessagesCollectionViewFlowLayout, heightForCellTopLabelAt indexPath: IndexPath) -> CGFloat {
+        /**
+         *  Each label in a cell has a `height` delegate method that corresponds to its text dataSource method
+         */
+        
+        /**
+         *  This logic should be consistent with what you return from `attributedTextForCellTopLabelAtIndexPath:`
+         *  The other label height delegate methods should follow similarly
+         *
+         *  Show a timestamp for every 3rd message
+         */
+        if indexPath.item % 3 == 0 {
+            return kJSQMessagesCollectionViewCellLabelHeightDefault
+        }
+        
+        return 0.0
+    }
+    
+    
+    
     // MARK: Pressed Send Button
     
     override func didPressSend(_ button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: Date!) {
@@ -155,11 +219,26 @@ class ChatViewController: JSQMessagesViewController {
         let user2 = self.chatUser?.id
         let roomName = "chat_"+(user1!<user2! ? user1!+"_"+user2! : user2!+"_"+user1!);
         let itemRef = ref.child(roomName).childByAutoId() // 1
+        
+        let imageUrlString = loginUser?.userphoto
+        var photoUrl = ""
+        if (imageUrlString?.characters.count)! > 0 {
+            photoUrl = imageUrlString!
+        }
+        
+        // Get Current date
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MMM/yy HH:mm a"
+        formatter.amSymbol = "AM"
+        formatter.pmSymbol = "PM"
+        let dateString = formatter.string(from: Date())
+        
         let messageItem = [ // 2
             "senderId": senderId!,
             "senderName": senderDisplayName!,
             "text": text!,
-            "userPhoto": "image url",
+            "userPhoto": photoUrl,
+            "timeStamp": dateString,
             ]
         itemRef.setValue(messageItem) // 3
         
@@ -170,9 +249,7 @@ class ChatViewController: JSQMessagesViewController {
         finishSendingMessage() // 5
     }
     
-    
     // MARK: UI and User Interaction
-    
     private func setupOutgoingBubble() -> JSQMessagesBubbleImage {
         let bubbleImageFactory = JSQMessagesBubbleImageFactory()
         return bubbleImageFactory!.outgoingMessagesBubbleImage(with: UIColor.jsq_messageBubbleBlue())

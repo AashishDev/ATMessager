@@ -28,9 +28,9 @@ class LoginViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         
         // Testing Only 
-//        emailTextField.text = "a@g.com"
-//        passwordTextField.text = "abc123"
-//        //validateAndLogin()
+         emailTextField.text = "d@g.com"
+         passwordTextField.text = "abc123"
+         validateAndLogin()
     }
     
     // MARK: UIButton Action
