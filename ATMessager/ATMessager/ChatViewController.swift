@@ -32,9 +32,10 @@ class ChatViewController: JSQMessagesViewController {
         observeMessages()
         
         // No avatars
-       // collectionView!.collectionViewLayout.incomingAvatarViewSize = CGSize.zero
-        // collectionView!.collectionViewLayout.incomingAvatarViewSize = CGSize(width: 45, height: 45)
-        //collectionView!.collectionViewLayout.outgoingAvatarViewSize = CGSize(width: 45, height: 45)
+        // collectionView!.collectionViewLayout.incomingAvatarViewSize = CGSize.zero
+        // collectionView!.collectionViewLayout.incomingAvatarViewSize = CGSize(width: 40, height: 45)
+        //collectionView!.collectionViewLayout.outgoingAvatarViewSize = CGSize(width: 40, height: 45)
+        collectionView!.collectionViewLayout.minimumLineSpacing = 10
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -68,8 +69,10 @@ class ChatViewController: JSQMessagesViewController {
                 // 4
                 self.addMessage(withId: id, name: name, text: text)
                 
+                JSQSystemSoundPlayer.jsq_playMessageReceivedSound()
                 // 5
                 self.finishReceivingMessage()
+                
             } else {
                 print("Error! Could not decode message data")
             }
@@ -251,12 +254,15 @@ class ChatViewController: JSQMessagesViewController {
     
     // MARK: UI and User Interaction
     private func setupOutgoingBubble() -> JSQMessagesBubbleImage {
-        let bubbleImageFactory = JSQMessagesBubbleImageFactory()
-        return bubbleImageFactory!.outgoingMessagesBubbleImage(with: UIColor.jsq_messageBubbleBlue())
+       
+        //let bubbleImageFactory = JSQMessagesBubbleImageFactory()
+        let bubbleImageFactory = JSQMessagesBubbleImageFactory(bubble: UIImage.jsq_bubbleRegularTailless(), capInsets: UIEdgeInsets.zero)
+        return bubbleImageFactory!.outgoingMessagesBubbleImage(with: UIColor(red: 74/255, green: 166/255, blue: 125/255, alpha: 1))
     }
     
     private func setupIncomingBubble() -> JSQMessagesBubbleImage {
-        let bubbleImageFactory = JSQMessagesBubbleImageFactory()
+        //let bubbleImageFactory = JSQMessagesBubbleImageFactory()
+        let bubbleImageFactory = JSQMessagesBubbleImageFactory(bubble: UIImage.jsq_bubbleRegularTailless(), capInsets: UIEdgeInsets.zero)
         return bubbleImageFactory!.incomingMessagesBubbleImage(with: UIColor.jsq_messageBubbleLightGray())
     }
     
