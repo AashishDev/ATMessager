@@ -51,11 +51,10 @@ class ChatViewController: JSQMessagesViewController {
     
     private func observeMessages() {
         
-       // let chatUrl = self.senderId + "_" + (self.chatUser?.id)!
-        let chatUrl = "121"
-       // let messageRef = ref.child(chatUrl)
-        // 1.
-        let messageQuery = ref.child(chatUrl).queryLimited(toLast:25)
+        let user1 = self.senderId
+        let user2 = self.chatUser?.id
+        let roomName = "chat_"+(user1!<user2! ? user1!+"_"+user2! : user2!+"_"+user1!);
+        let messageQuery = ref.child(roomName).queryLimited(toLast:25)
         
         // 2. We can use the observe method to listen for new
         // messages being written to the Firebase DB
@@ -152,13 +151,15 @@ class ChatViewController: JSQMessagesViewController {
     
     override func didPressSend(_ button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: Date!) {
         
-        // let chatUrl = self.senderId + "_" + (self.chatUser?.id)!
-        let chatUrl = "121"
-        let itemRef = ref.child(chatUrl).childByAutoId() // 1
+        let user1 = self.senderId
+        let user2 = self.chatUser?.id
+        let roomName = "chat_"+(user1!<user2! ? user1!+"_"+user2! : user2!+"_"+user1!);
+        let itemRef = ref.child(roomName).childByAutoId() // 1
         let messageItem = [ // 2
             "senderId": senderId!,
             "senderName": senderDisplayName!,
             "text": text!,
+            "userPhoto": "image url",
             ]
         itemRef.setValue(messageItem) // 3
         
