@@ -26,7 +26,7 @@
                   moduleName = "ATMessager"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/mobilemac1/Desktop/ATMessager/ATMessager/ATMessager/SignupViewController.swift"
-                  timestampString = "522590286.784361"
+                  timestampString = "522653123.700484"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "80"
@@ -41,7 +41,7 @@
                   moduleName = "ATMessager"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/mobilemac1/Desktop/ATMessager/ATMessager/ATMessager/SignupViewController.swift"
-                  timestampString = "522590286.786798"
+                  timestampString = "522653123.703075"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "80"
@@ -104,61 +104,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ATMessager/ChatViewController.swift"
-            timestampString = "522590285.628629"
+            timestampString = "522652501.604911"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "138"
-            endingLineNumber = "138"
+            startingLineNumber = "137"
+            endingLineNumber = "137"
             landmarkName = "collectionView(_:attributedTextForMessageBubbleTopLabelAt:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ATMessager/ChatViewController.swift"
-            timestampString = "522590271.636006"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
-            landmarkName = "observeMessages()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ATMessager.ChatViewController.((observeMessages in _41C4904269811A81B37637F1503117B2) () -&gt; ()).(closure #1)"
-                  moduleName = "ATMessager"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mobilemac1/Desktop/ATMessager/ATMessager/ATMessager/ChatViewController.swift"
-                  timestampString = "522590286.793863"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "66"
-                  endingLineNumber = "66"
-                  offsetFromSymbolStart = "409">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ATMessager.ChatViewController.((observeMessages in _41C4904269811A81B37637F1503117B2) () -&gt; ()).(closure #1)"
-                  moduleName = "ATMessager"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mobilemac1/Desktop/ATMessager/ATMessager/ATMessager/ChatViewController.swift"
-                  timestampString = "522590286.79549"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "66"
-                  endingLineNumber = "66"
-                  offsetFromSymbolStart = "623">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

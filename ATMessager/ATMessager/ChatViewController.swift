@@ -51,8 +51,8 @@ class ChatViewController: JSQMessagesViewController {
     
     private func observeMessages() {
         
-        let chatUrl = self.senderId + "_" + (self.chatUser?.id)!
-
+       // let chatUrl = self.senderId + "_" + (self.chatUser?.id)!
+        let chatUrl = "121"
        // let messageRef = ref.child(chatUrl)
         // 1.
         let messageQuery = ref.child(chatUrl).queryLimited(toLast:25)
@@ -152,7 +152,8 @@ class ChatViewController: JSQMessagesViewController {
     
     override func didPressSend(_ button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: Date!) {
         
-        let chatUrl = self.senderId + "_" + (self.chatUser?.id)!
+        // let chatUrl = self.senderId + "_" + (self.chatUser?.id)!
+        let chatUrl = "121"
         let itemRef = ref.child(chatUrl).childByAutoId() // 1
         let messageItem = [ // 2
             "senderId": senderId!,

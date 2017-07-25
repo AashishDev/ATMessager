@@ -30,7 +30,7 @@ class LoginViewController: UIViewController {
         // Testing Only 
         emailTextField.text = "b@g.com"
         passwordTextField.text = "abc123"
-        validateAndLogin()
+        //validateAndLogin()
 
     }
     
