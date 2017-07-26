@@ -10,8 +10,9 @@ import UIKit
 import JSQMessagesViewController
 import FirebaseDatabase
 import FirebaseAuth
+import FirebaseStorage
 
-class ChatViewController: JSQMessagesViewController {
+class ChatViewController: JSQMessagesViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     
     let ref = FIRDatabase.database().reference(withPath: "Conversation")
@@ -65,6 +66,24 @@ class ChatViewController: JSQMessagesViewController {
             // 3
             let messageData = snapshot.value as! Dictionary<String, String>
             
+            if let imageTypeMsg = messageData["photoURL"] as String!, imageTypeMsg.characters.count > 10 {
+            
+                let id = messageData["senderId"] as String!
+                let name = messageData["senderName"] as String!
+                
+                let imageView = UIImageView()
+                let urlImage = URL(string: imageTypeMsg)
+                imageView.sd_setImage(with: urlImage, placeholderImage: UIImage(named: "App-Default"), options: []) { (image, error, imageCacheType, imageUrl) in
+                    
+                    let mediaItem = JSQPhotoMediaItem(image: nil)
+                    mediaItem?.appliesMediaViewMaskAsOutgoing = true
+                    mediaItem?.image = UIImage(data: UIImageJPEGRepresentation(image!, 0.5)!)
+                    let sendMessage = JSQMessage(senderId: id, displayName: name, media: mediaItem)
+                    self.messages.append(sendMessage!)
+                    self.finishSendingMessage()
+                }
+            }
+           /*
             if let id = messageData["senderId"] as String!, let name = messageData["senderName"] as String!, let text = messageData["text"] as String!, text.characters.count > 0 {
                 // 4
                 self.addMessage(withId: id, name: name, text: text)
@@ -73,8 +92,17 @@ class ChatViewController: JSQMessagesViewController {
                 // 5
                 self.finishReceivingMessage()
                 
-            } else {
-                print("Error! Could not decode message data")
+            }*/
+            else {
+                
+                if let id = messageData["senderId"] as String!, let name = messageData["senderName"] as String!, let text = messageData["text"] as String!, text.characters.count > 0 {
+                    // 4
+                    self.addMessage(withId: id, name: name, text: text)
+                    JSQSystemSoundPlayer.jsq_playMessageReceivedSound()
+                    // 5
+                    self.finishReceivingMessage()
+                }
+                //print("Error! Could not decode message data")
             }
         })
     }
@@ -246,15 +274,101 @@ class ChatViewController: JSQMessagesViewController {
             "text": text!,
             "userPhoto": photoUrl,
             "timeStamp": dateString,
+            "photoURL": " ",
             ]
         itemRef.setValue(messageItem) // 3
-        
-        /* let message = JSQMessage(senderId: self.senderId, displayName:"Rohan", text: "I am fine, How's You")
-         self.messages.append(message!)*/
         JSQSystemSoundPlayer.jsq_playMessageSentSound() // 4
         
         finishSendingMessage() // 5
     }
+    
+    
+    override func didPressAccessoryButton(_ sender: UIButton) {
+       
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        if (UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera)) {
+            picker.sourceType = UIImagePickerControllerSourceType.camera
+        } else {
+            picker.sourceType = UIImagePickerControllerSourceType.photoLibrary
+        }
+        present(picker, animated: true, completion:nil)
+    }
+    
+    
+    func imagePickerController(_ picker: UIImagePickerController,
+                               didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            
+            let mediaItem = JSQPhotoMediaItem(image: nil)
+            mediaItem?.appliesMediaViewMaskAsOutgoing = true
+            mediaItem?.image = UIImage(data: UIImageJPEGRepresentation(image, 0.5)!)
+            let sendMessage = JSQMessage(senderId: senderId, displayName: self.senderDisplayName, media: mediaItem)
+            self.messages.append(sendMessage!)
+            self.finishSendingMessage()
+           
+            uploadUserImage(selectedImg: image)
+        } else{
+            print("Something went wrong")
+        }
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func uploadUserImage(selectedImg: UIImage)
+    {
+        
+        var storageRootRef: FIRStorageReference!
+        if  let userID:String = FIRAuth.auth()?.currentUser?.uid {
+            
+            storageRootRef = FIRStorage.storage().reference(forURL:"gs://atmessager.appspot.com")
+            storageRootRef = storageRootRef.child("MediaImages").child(userID + ".png")
+            
+            if let imageData = UIImagePNGRepresentation(selectedImg)
+            {
+                storageRootRef.put(imageData, metadata: nil, completion: { (metadata: FIRStorageMetadata?, error: Error?) in
+                    
+                    if let storageError = error
+                    {
+                        //self.indicator.stopAnimating()
+                        print("Firebase Upload Error")
+                        print(storageError.localizedDescription)
+                        return
+                    }
+                    else if let storageMetadata = metadata
+                    {
+                        if let imageURL = storageMetadata.downloadURL()
+                        {
+                            print(imageURL.absoluteString)
+                            //let userData = ["ImageUrl":imageURL.absoluteString]
+                            
+                            
+                            let imageUrlString = self.loginUser?.userphoto
+                            var photoUrl = ""
+                            if (imageUrlString?.characters.count)! > 0 {
+                                photoUrl = imageUrlString!
+                            }
+                            
+                            let user1 = self.senderId
+                            let user2 = self.chatUser?.id
+                            let roomName = "chat_"+(user1!<user2! ? user1!+"_"+user2! : user2!+"_"+user1!);
+                            let itemRef = self.ref.child(roomName).childByAutoId() // 1
+                            let messageItem = [ // 2
+                                "senderId": self.senderId!,
+                                "senderName": self.senderDisplayName!,
+                                "text": " ",
+                                "userPhoto": photoUrl,
+                                "timeStamp": "",
+                                "photoURL": imageURL.absoluteString,
+                                ]
+                            itemRef.setValue(messageItem) // 3
+                        }
+                    }
+                })
+                
+            }
+        }
+    }
+    
     
     // MARK: UI and User Interaction
     private func setupOutgoingBubble() -> JSQMessagesBubbleImage {

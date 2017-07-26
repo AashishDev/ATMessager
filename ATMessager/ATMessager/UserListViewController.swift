@@ -243,7 +243,8 @@ class UserListViewController: UIViewController, UITableViewDelegate, UITableView
         print("Profile Button Clicked !!");
     }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+    func imagePickerController(_ picker: UIImagePickerController,
+                                   didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             
             uploadUserImage(selectedImg: image)
