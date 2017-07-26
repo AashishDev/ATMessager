@@ -115,16 +115,20 @@ class ChatViewController: JSQMessagesViewController {
             cell.textView?.textColor = UIColor.black // 3
         }
         
-        let imageUrlString = "https://firebasestorage.googleapis.com/v0/b/atmessager.appspot.com/o/ProfileImages%2FGSGPzhTfMpS98W6JQrkc2Nzz0Uq1.png?alt=media&token=22a12ac1-cfd7-4efb-b5b3-1a700f8968d2"
-        let url = URL(string: imageUrlString)
-        if imageUrlString.characters.count > 0 {
+        let ref = FIRDatabase.database().reference(withPath: "Users").child(message.senderId)
+        ref.observe(.value, with: { snapshot in
             
-            cell.avatarImageView.sd_setImage(with: url, placeholderImage: UIImage(named: "App-Default"), options: []) { (image, error, imageCacheType, imageUrl) in
-                
-               cell.avatarImageView.image = JSQMessagesAvatarImageFactory.circularAvatarImage(image, withDiameter: 88)
+            let value = snapshot.value as? NSDictionary
+            let imageUrlString = value?["userPhoto"] as! String
+            let url = URL(string: imageUrlString)
+            if imageUrlString.characters.count > 0 {
+                cell.avatarImageView.sd_setImage(with: url, placeholderImage: UIImage(named: "App-Default"), options: []) { (image, error, imageCacheType, imageUrl) in
+                    
+                    cell.avatarImageView.image = JSQMessagesAvatarImageFactory.circularAvatarImage(image, withDiameter: 88)
+                }
             }
-        }
-        
+        })
+
         return cell
     }
     

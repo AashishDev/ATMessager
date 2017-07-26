@@ -26,7 +26,7 @@
                   moduleName = "ATMessager"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/mobilemac1/Desktop/ATMessager/ATMessager/ATMessager/SignupViewController.swift"
-                  timestampString = "522678055.848135"
+                  timestampString = "522737365.179634"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "80"
@@ -41,7 +41,7 @@
                   moduleName = "ATMessager"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/mobilemac1/Desktop/ATMessager/ATMessager/ATMessager/SignupViewController.swift"
-                  timestampString = "522678055.851035"
+                  timestampString = "522737365.181804"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "80"
@@ -104,11 +104,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ATMessager/ChatViewController.swift"
-            timestampString = "522678054.687991"
+            timestampString = "522737504.2306"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "167"
-            endingLineNumber = "167"
+            startingLineNumber = "171"
+            endingLineNumber = "171"
             landmarkName = "collectionView(_:attributedTextForMessageBubbleTopLabelAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -127,6 +127,99 @@
             endingLineNumber = "53"
             landmarkName = "validateAndLogin()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ATMessager/ChatViewController.swift"
+            timestampString = "522736168.249276"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "ChatViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ATMessager.ChatViewController.__deallocating_deinit"
+                  moduleName = "ATMessager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mobilemac1/Desktop/ATMessager/ATMessager/ATMessager/ChatViewController.swift"
+                  timestampString = "522736409.249057"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ATMessager.ChatViewController.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; ATMessager.ChatViewController"
+                  moduleName = "ATMessager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mobilemac1/Desktop/ATMessager/ATMessager/ATMessager/ChatViewController.swift"
+                  timestampString = "522736409.250394"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "57">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ATMessager.ChatViewController.__allocating_init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; ATMessager.ChatViewController"
+                  moduleName = "ATMessager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mobilemac1/Desktop/ATMessager/ATMessager/ATMessager/ChatViewController.swift"
+                  timestampString = "522736409.251683"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "23">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ATMessager.ChatViewController.__allocating_init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;ATMessager.ChatViewController&gt;"
+                  moduleName = "ATMessager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mobilemac1/Desktop/ATMessager/ATMessager/ATMessager/ChatViewController.swift"
+                  timestampString = "522736409.252972"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ATMessager.ChatViewController.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;ATMessager.ChatViewController&gt;"
+                  moduleName = "ATMessager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mobilemac1/Desktop/ATMessager/ATMessager/ATMessager/ChatViewController.swift"
+                  timestampString = "522736409.254414"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "19">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
