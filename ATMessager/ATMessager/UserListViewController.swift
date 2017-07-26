@@ -15,7 +15,7 @@ import SDWebImage
 
 
 class UserListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-
+    
     let ref = FIRDatabase.database().reference(withPath: "Users")
     var userList = [User]()
     var loginUser = [User]()
@@ -23,9 +23,14 @@ class UserListViewController: UIViewController, UITableViewDelegate, UITableView
     let indicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var userPhotoImg: UIImageView!
+    @IBOutlet weak var userPhotoTable: UITableView!
+    var userPhotoMenu = [String]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        userPhotoMenu = ["View Photo", "Upload New"]
         
         //1 Activity Indicator
         indicator.center = self.view.center
@@ -47,7 +52,7 @@ class UserListViewController: UIViewController, UITableViewDelegate, UITableView
             
             var newItems: [User] = []
             let userID = FIRAuth.auth()?.currentUser?.uid
-
+            
             let value = snapshot.value as? NSDictionary
             for (key, data) in value! {
                 let keyName = key as! String
@@ -64,7 +69,7 @@ class UserListViewController: UIViewController, UITableViewDelegate, UITableView
                     }
                 }
             }
-
+            
             self.userList = newItems
             self.tableView.reloadData()
         })
@@ -74,7 +79,7 @@ class UserListViewController: UIViewController, UITableViewDelegate, UITableView
     
     // MARK: Fetch user list
     func getUserList(){
-       
+        
         indicator.startAnimating()
         let dbRef = FIRDatabase.database().reference()
         let userID = FIRAuth.auth()?.currentUser?.uid
@@ -109,52 +114,85 @@ class UserListViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     
-// MARK: UITableView Method
+    // MARK: UITableView Method
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if tableView == userPhotoTable {
+            return userPhotoMenu.count
+        }
         return userList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "UserCell", for: indexPath) as! UserTableViewCell
-        
-        let user = userList[indexPath.row]
-        cell.nameLabel.text = user.name
-        cell.locationLabel.text = user.location
-        cell.onlineView.layer.cornerRadius = cell.onlineView.frame.size.height/2
-        cell.onlineView.clipsToBounds = true
-        
-        let onlineStatus = user.online
-        if onlineStatus == "1" {
-            cell.onlineView.isHidden = false;
+        if tableView == userPhotoTable {
+            
+            let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "cell")
+            
+            cell.textLabel?.font = cell.textLabel?.font.withSize(15)
+            cell.textLabel?.text = userPhotoMenu[indexPath.row]
+            cell.textLabel?.textColor = UIColor.white
+            //cell.contentView.backgroundColor =  UIColor(red: 74/255, green: 166/255, blue: 125/255, alpha: 1)
+            cell.backgroundColor = UIColor.clear
+            return cell
         }
-        else{
-            cell.onlineView.isHidden = true;
+        else {
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "UserCell", for: indexPath) as! UserTableViewCell
+            
+            let user = userList[indexPath.row]
+            cell.nameLabel.text = user.name
+            cell.locationLabel.text = user.location
+            cell.onlineView.layer.cornerRadius = cell.onlineView.frame.size.height/2
+            cell.onlineView.clipsToBounds = true
+            
+            let onlineStatus = user.online
+            if onlineStatus == "1" {
+                cell.onlineView.isHidden = false;
+            }
+            else{
+                cell.onlineView.isHidden = true;
+            }
+            
+            let imageUrlString = user.userphoto
+            if imageUrlString.characters.count > 0 {
+                cell.userImageView.sd_setImage(with: URL(string: imageUrlString))
+                cell.userImageView.layer.cornerRadius = cell.userImageView.frame.size.height/2
+                cell.userImageView.clipsToBounds = true
+            }
+            return cell
+            
         }
-        
-        let imageUrlString = user.userphoto
-        if imageUrlString.characters.count > 0 {
-            cell.userImageView.sd_setImage(with: URL(string: imageUrlString))
-            cell.userImageView.layer.cornerRadius = cell.userImageView.frame.size.height/2
-            cell.userImageView.clipsToBounds = true
-        }
-        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    
         
-        
-        let user = userList[indexPath.row]
-        let chatView = ChatViewController()
-        chatView.senderDisplayName = user.name
-        chatView.chatUser = user
-        chatView.loginUser = loginUser[0]
-        self.navigationController?.pushViewController(chatView, animated: true)
+        tableView.deselectRow(at: indexPath, animated: false)
+        userPhotoTable.isHidden = true
+        if tableView == userPhotoTable {
+            
+            if indexPath.row == 0 {
+            
+                //1] View Photo in Full Screen
+            }
+            else {
+            
+                //2] Upload new photo on Server
+                uploadPhoto()
+            }
+        }
+        else {
+            
+            let user = userList[indexPath.row]
+            let chatView = ChatViewController()
+            chatView.senderDisplayName = user.name
+            chatView.chatUser = user
+            chatView.loginUser = loginUser[0]
+            self.navigationController?.pushViewController(chatView, animated: true)
+        }
     }
     
-// MARK: UIButton Action
+    // MARK: UIButton Action
     
     //1] Logout Button
     @IBAction func logoutButtonTapped(_ sender: Any) {
@@ -178,19 +216,24 @@ class UserListViewController: UIViewController, UITableViewDelegate, UITableView
     //2] Profile Button
     @IBAction func profileImgBtnTapped(_ sender: UIButton) {
         
-            if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum){
-                print("Button capture")
-                
-                imagePicker.delegate = self
-                imagePicker.sourceType = .savedPhotosAlbum;
-                imagePicker.allowsEditing = false
-                self.present(imagePicker, animated: true, completion: nil)
-            }
+        userPhotoTable.isHidden = !userPhotoTable.isHidden
+    }
+    
+    func uploadPhoto()  {
+        
+        if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum){
+            print("Button capture")
+            
+            imagePicker.delegate = self
+            imagePicker.sourceType = .savedPhotosAlbum;
+            imagePicker.allowsEditing = false
+            self.present(imagePicker, animated: true, completion: nil)
+        }
         //}
         print("Profile Button Clicked !!");
     }
     
-     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             
             uploadUserImage(selectedImg: image)
