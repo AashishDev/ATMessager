@@ -9,12 +9,15 @@
 import UIKit
 import FirebaseDatabase
 import FirebaseAuth
+import MMLoadingButton
 
 class LoginViewController: UIViewController {
     
     let indicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var loadingBtn:MMLoadingButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,6 +40,7 @@ class LoginViewController: UIViewController {
     //1] Login
     @IBAction func loginButtonTapped(_ sender: UIButton) {
         
+        loadingBtn.startLoading()
         validateAndLogin()
     }
     
@@ -60,30 +64,35 @@ class LoginViewController: UIViewController {
             
         } else {
             
-            indicator.startAnimating()
+           // indicator.startAnimating()
             FIRAuth.auth()?.signIn(withEmail: self.emailTextField.text!, password: self.passwordTextField.text!) { (user, error) in
                 
-                self.indicator.stopAnimating()
+                //self.indicator.stopAnimating()
                 if error == nil {
                     
                     // Set Online Status
                     let dbRef = FIRDatabase.database().reference()
                     dbRef.child("Users").child(FIRAuth.auth()!.currentUser!.uid).updateChildValues(["online": "1"])
                     
-                    print("You have successfully logged in")
-                    //Go to the UserListViewController if the login is sucessful
-                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "UserList")
-                    self.navigationController?.pushViewController(vc!, animated: true)
+                    self.loadingBtn.stopLoading(true, completed: {
+                        
+                        print("Success ")
+                        print("You have successfully logged in")
+                        let vc = self.storyboard?.instantiateViewController(withIdentifier: "UserList")
+                        self.navigationController?.pushViewController(vc!, animated: true)
+                    })
                     
                 } else {
                     
-                    //Tells the user that there is an error and then gets firebase to tell them the error
-                    let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
+                    self.loadingBtn.stopWithError((error?.localizedDescription)!, hideInternal: 2, completed: {
+                        print ("Fail Message Completed")
+                    })
                     
+                   /* //Tells the user that there is an error and then gets firebase to tell them the error
+                    let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
                     let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
                     alertController.addAction(defaultAction)
-                    
-                    self.present(alertController, animated: true, completion: nil)
+                    self.present(alertController, animated: true, completion: nil) */
                 }
             }
         }

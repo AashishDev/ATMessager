@@ -29,6 +29,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>MMLoadingButton.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-ATMessager.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -52,7 +57,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9EA4ED975FA42C605FEDC233FFFDCCDD</key>
+		<key>21E136B8D32DEA205A5E0A9E350950BC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>453E21A5DD1FF56CEBB58DBC8F4FDC5B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>501E3A7F67602EA477AB66948353741E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -68,11 +83,6 @@
 			<true/>
 		</dict>
 		<key>D0581AF7BF4A6DA140D280B19ECC7BFF</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>D7C83AEBC5FB64AB84E6A028EBEACCA8</key>
 		<dict>
 			<key>primary</key>
 			<true/>

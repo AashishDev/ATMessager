@@ -38,10 +38,10 @@ class UserListViewController: UIViewController, UITableViewDelegate, UITableView
         view.addSubview(indicator)
         
         //2 UserImageview
-        userPhotoImg.layer.cornerRadius = 15
+        userPhotoImg.layer.cornerRadius = userPhotoImg.frame.size.height/2
         userPhotoImg.layer.masksToBounds = true;
         userPhotoImg.layer.borderColor = UIColor.white.cgColor
-        userPhotoImg.layer.borderWidth = 0.4
+        userPhotoImg.layer.borderWidth = 1.5
         
         //3 Table Height & Get User listing
         tableView.tableFooterView = UIView()
@@ -160,6 +160,8 @@ class UserListViewController: UIViewController, UITableViewDelegate, UITableView
                 cell.userImageView.sd_setImage(with: URL(string: imageUrlString))
                 cell.userImageView.layer.cornerRadius = cell.userImageView.frame.size.height/2
                 cell.userImageView.clipsToBounds = true
+                cell.userImageView.layer.borderColor = UIColor(red: 74/255, green: 166/255, blue: 125/255, alpha: 1).cgColor
+                cell.userImageView.layer.borderWidth = 1.5
             }
             return cell
             

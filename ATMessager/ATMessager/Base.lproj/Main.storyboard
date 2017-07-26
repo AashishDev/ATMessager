@@ -54,7 +54,7 @@
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vgi-yz-iAV">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vgi-yz-iAV" customClass="MMLoadingButton" customModule="MMLoadingButton">
                                                 <rect key="frame" x="70" y="330" width="235" height="38"/>
                                                 <color key="backgroundColor" red="0.99215686274509807" green="0.58425903320000006" blue="0.42443481090000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
@@ -66,8 +66,14 @@
                                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="6"/>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="errorColor">
+                                                        <color key="value" red="1" green="0.38823529410000002" blue="0.38823529410000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="errFontSize">
+                                                        <integer key="value" value="12"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="errLabelMargin">
+                                                        <real key="value" value="5"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
@@ -141,6 +147,7 @@
                     <navigationItem key="navigationItem" id="MAm-u2-wQG"/>
                     <connections>
                         <outlet property="emailTextField" destination="aNy-gb-Gq7" id="6ni-PB-NbZ"/>
+                        <outlet property="loadingBtn" destination="Vgi-yz-iAV" id="BOE-Ps-ZQX"/>
                         <outlet property="passwordTextField" destination="TdG-88-HTm" id="vSQ-WM-2bH"/>
                     </connections>
                 </viewController>
@@ -183,14 +190,14 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user_avtar" translatesAutoresizingMaskIntoConstraints="NO" id="36u-aF-61m">
-                                        <rect key="frame" x="5" y="30" width="30" height="30"/>
+                                        <rect key="frame" x="5" y="25" width="35" height="35"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="30" id="CU5-ZK-F0Q"/>
-                                            <constraint firstAttribute="height" constant="30" id="QdO-mH-x2D"/>
+                                            <constraint firstAttribute="width" constant="35" id="CU5-ZK-F0Q"/>
+                                            <constraint firstAttribute="height" constant="35" id="QdO-mH-x2D"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="you" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dCB-0e-gwq">
-                                        <rect key="frame" x="37" y="35.5" width="45" height="23.5"/>
+                                        <rect key="frame" x="42" y="35.5" width="45" height="23.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="45" id="2N4-dG-UgK"/>
                                         </constraints>

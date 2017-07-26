@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '453E21A5DD1FF56CEBB58DBC8F4FDC5B'
-               BlueprintName = 'SDWebImage'
+               BlueprintIdentifier = '501E3A7F67602EA477AB66948353741E'
+               BlueprintName = 'MMLoadingButton'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'SDWebImage.framework'>
+               BuildableName = 'MMLoadingButton.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

@@ -13,4 +13,5 @@ target 'ATMessager' do
   pod 'SDWebImage'
   pod 'JSQMessagesViewController'
   pod 'DTPhotoViewerController'
+  pod 'MMLoadingButton'
 end
