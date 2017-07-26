@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>DTPhotoViewerController.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>GTMSessionFetcher.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -42,7 +47,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9C311258FA7C73680DD974EF168C416C</key>
+		<key>13AEFD7E88075A118D7CA7572AC09CD0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9EA4ED975FA42C605FEDC233FFFDCCDD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -57,12 +67,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CCA25F38223EE78757B237B7A3523130</key>
+		<key>D0581AF7BF4A6DA140D280B19ECC7BFF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D0581AF7BF4A6DA140D280B19ECC7BFF</key>
+		<key>D7C83AEBC5FB64AB84E6A028EBEACCA8</key>
 		<dict>
 			<key>primary</key>
 			<true/>

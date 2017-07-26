@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '9EA4ED975FA42C605FEDC233FFFDCCDD'
-               BlueprintName = 'SDWebImage'
+               BlueprintIdentifier = '13AEFD7E88075A118D7CA7572AC09CD0'
+               BlueprintName = 'DTPhotoViewerController'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'SDWebImage.framework'>
+               BuildableName = 'DTPhotoViewerController.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

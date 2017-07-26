@@ -12,6 +12,7 @@ import FirebaseDatabase
 import FirebaseCore
 import FirebaseStorage
 import SDWebImage
+import DTPhotoViewerController
 
 
 class UserListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
@@ -174,6 +175,7 @@ class UserListViewController: UIViewController, UITableViewDelegate, UITableView
             if indexPath.row == 0 {
             
                 //1] View Photo in Full Screen
+                showImageFullScreen()
             }
             else {
             
@@ -209,6 +211,14 @@ class UserListViewController: UIViewController, UITableViewDelegate, UITableView
             } catch let error as NSError {
                 print(error.localizedDescription)
             }
+        }
+    }
+    
+    
+    func showImageFullScreen()  {
+      
+        if let viewController = DTPhotoViewerController(referencedView: self.userPhotoImg, image: self.userPhotoImg.image) {
+            self.present(viewController, animated: true, completion: nil)
         }
     }
     
