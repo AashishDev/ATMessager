@@ -233,7 +233,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="49" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Kkc-pi-Ekn">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="553"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" red="0.27095979450000002" green="0.54558366540000003" blue="0.99994570019999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
@@ -317,21 +317,32 @@
                                     <outlet property="delegate" destination="SOK-BD-oO8" id="Gzp-LL-sZf"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GPG-9j-fCx" customClass="GADBannerView">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="pSI-U7-bbw"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Dy8-T4-7Rm" firstAttribute="leading" secondItem="zgh-Sd-cQf" secondAttribute="leading" id="8Fr-Oc-i3Y"/>
+                            <constraint firstItem="GPG-9j-fCx" firstAttribute="top" secondItem="Kkc-pi-Ekn" secondAttribute="bottom" id="EiI-T3-84e"/>
+                            <constraint firstAttribute="trailing" secondItem="GPG-9j-fCx" secondAttribute="trailing" id="FV9-bh-2fN"/>
                             <constraint firstItem="Dy8-T4-7Rm" firstAttribute="top" secondItem="zgh-Sd-cQf" secondAttribute="top" id="G1b-sR-ua4"/>
                             <constraint firstAttribute="trailing" secondItem="Kkc-pi-Ekn" secondAttribute="trailing" id="SxL-gw-h9D"/>
                             <constraint firstItem="Kkc-pi-Ekn" firstAttribute="top" secondItem="Dy8-T4-7Rm" secondAttribute="bottom" id="Yfc-HE-btY"/>
+                            <constraint firstAttribute="bottom" secondItem="GPG-9j-fCx" secondAttribute="bottom" id="Z1W-q1-e3f"/>
+                            <constraint firstItem="GPG-9j-fCx" firstAttribute="leading" secondItem="zgh-Sd-cQf" secondAttribute="leading" id="ZwM-Ts-Ovj"/>
                             <constraint firstAttribute="trailing" secondItem="Dy8-T4-7Rm" secondAttribute="trailing" id="bDr-Bl-JNa"/>
                             <constraint firstItem="kYG-kC-e0w" firstAttribute="top" secondItem="Dy8-T4-7Rm" secondAttribute="bottom" id="j55-hE-K2N"/>
                             <constraint firstItem="Kkc-pi-Ekn" firstAttribute="leading" secondItem="zgh-Sd-cQf" secondAttribute="leading" id="ja1-aK-JN5"/>
                             <constraint firstItem="kYG-kC-e0w" firstAttribute="leading" secondItem="zgh-Sd-cQf" secondAttribute="leading" id="x0V-85-YQv"/>
-                            <constraint firstItem="HNc-uy-ttv" firstAttribute="top" secondItem="Kkc-pi-Ekn" secondAttribute="bottom" id="xsm-4J-Too"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bannerView" destination="GPG-9j-fCx" id="C6f-yd-AyU"/>
                         <outlet property="tableView" destination="Kkc-pi-Ekn" id="dt0-pl-6E8"/>
                         <outlet property="userPhotoImg" destination="36u-aF-61m" id="W7C-fs-4Qr"/>
                         <outlet property="userPhotoTable" destination="kYG-kC-e0w" id="PeC-R1-ZcI"/>

@@ -11,6 +11,7 @@ import FirebaseAuth
 import FirebaseDatabase
 import FirebaseCore
 import FirebaseStorage
+import GoogleMobileAds
 import SDWebImage
 import DTPhotoViewerController
 
@@ -25,12 +26,18 @@ class UserListViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var userPhotoImg: UIImageView!
     @IBOutlet weak var userPhotoTable: UITableView!
+    
+    
+    /// The banner view.
+    @IBOutlet weak var bannerView: GADBannerView!
     var userPhotoMenu = [String]()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Add Google Banner
+        showGoogleAds()
         userPhotoMenu = ["View Photo", "Upload New"]
         
         //1 Activity Indicator
@@ -76,6 +83,14 @@ class UserListViewController: UIViewController, UITableViewDelegate, UITableView
         })
         
     }
+    
+    func showGoogleAds()  {
+        
+        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
+    }
+    
     
     
     // MARK: Fetch user list
