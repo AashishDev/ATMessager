@@ -14,7 +14,7 @@ import FirebaseStorage
 import GoogleMobileAds
 import SDWebImage
 import DTPhotoViewerController
-
+import MarqueeLabel
 
 class UserListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
@@ -26,6 +26,7 @@ class UserListViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var userPhotoImg: UIImageView!
     @IBOutlet weak var userPhotoTable: UITableView!
+    @IBOutlet weak var newsMarqueLabel: MarqueeLabel!
     
     
     /// The banner view.
@@ -35,6 +36,12 @@ class UserListViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // News feed marque Label
+        newsMarqueLabel.speed = .rate(60)
+        newsMarqueLabel.type = .continuous
+        newsMarqueLabel.animationCurve = .easeInOut
+        newsMarqueLabel.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vulputate ex at lorem gravida ultricies. Integer ultrices nunc tellus, eget pharetra ligula pretium sed. Nam iaculis congue nibh, at fermentum dolor. Maecenas laoreet nisl nec est tristique, sit amet pharetra nisl cursus. Praesent finibus dignissim risus. Sed sit amet sollicitudin turpis, ut molestie quam. Curabitur tempus, massa non blandit blandit, ipsum urna elementum orci, eget posuere erat magna nec lacus."
         
         // Add Google Banner
         showGoogleAds()

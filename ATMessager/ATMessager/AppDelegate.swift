@@ -23,6 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // Firbase Intigration
         FIRApp.configure()
+        FIRDatabase.database().persistenceEnabled = true
         return true
     }
 

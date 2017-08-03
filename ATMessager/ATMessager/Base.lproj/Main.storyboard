@@ -233,36 +233,48 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VWe-JL-hTA" userLabel="NewsFeed">
-                                <rect key="frame" x="0.0" y="64" width="375" height="80"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="65"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0L2-dm-rbC">
-                                        <rect key="frame" x="2" y="2" width="90" height="75"/>
+                                        <rect key="frame" x="2" y="2" width="75" height="60"/>
                                         <color key="backgroundColor" red="0.30190187689999998" green="0.64857321980000004" blue="0.51177030800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="90" id="hNb-Yz-2Bu"/>
+                                            <constraint firstAttribute="width" constant="75" id="hNb-Yz-2Bu"/>
                                         </constraints>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xrl-2e-X4j" userLabel="sepratorLine">
-                                        <rect key="frame" x="0.0" y="78" width="375" height="1"/>
+                                        <rect key="frame" x="0.0" y="63" width="375" height="1"/>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="n0U-yD-F3N"/>
                                         </constraints>
                                     </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UUX-ob-sFA" customClass="MarqueeLabel" customModule="MarqueeLabel">
+                                        <rect key="frame" x="79" y="20.5" width="288" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="r9q-Cx-A97"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.92148774862289429" green="0.92162030935287476" blue="0.92145878076553345" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="0L2-dm-rbC" secondAttribute="bottom" constant="3" id="4Oh-mp-jhc"/>
+                                    <constraint firstItem="UUX-ob-sFA" firstAttribute="centerY" secondItem="VWe-JL-hTA" secondAttribute="centerY" id="8S1-fB-erO"/>
                                     <constraint firstItem="0L2-dm-rbC" firstAttribute="leading" secondItem="VWe-JL-hTA" secondAttribute="leading" constant="2" id="H4I-BJ-JfM"/>
                                     <constraint firstAttribute="bottom" secondItem="Xrl-2e-X4j" secondAttribute="bottom" constant="1" id="Lj6-Pg-AvF"/>
+                                    <constraint firstAttribute="trailing" secondItem="UUX-ob-sFA" secondAttribute="trailing" constant="8" id="TNd-d8-6sA"/>
                                     <constraint firstItem="Xrl-2e-X4j" firstAttribute="leading" secondItem="VWe-JL-hTA" secondAttribute="leading" id="TNn-0B-AT6"/>
-                                    <constraint firstAttribute="height" constant="80" id="Wkp-E2-Dqj"/>
+                                    <constraint firstAttribute="height" constant="65" id="Wkp-E2-Dqj"/>
                                     <constraint firstItem="0L2-dm-rbC" firstAttribute="top" secondItem="VWe-JL-hTA" secondAttribute="top" constant="2" id="d7c-9b-RCZ"/>
                                     <constraint firstAttribute="trailing" secondItem="Xrl-2e-X4j" secondAttribute="trailing" id="lhd-Pb-C95"/>
+                                    <constraint firstItem="UUX-ob-sFA" firstAttribute="leading" secondItem="0L2-dm-rbC" secondAttribute="trailing" constant="2" id="weJ-Vw-ILe"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="49" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Kkc-pi-Ekn">
-                                <rect key="frame" x="0.0" y="144" width="375" height="473"/>
+                                <rect key="frame" x="0.0" y="129" width="375" height="488"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" red="0.27095979450000002" green="0.54558366540000003" blue="0.99994570019999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
@@ -375,6 +387,7 @@
                     </view>
                     <connections>
                         <outlet property="bannerView" destination="GPG-9j-fCx" id="C6f-yd-AyU"/>
+                        <outlet property="newsMarqueLabel" destination="UUX-ob-sFA" id="qRj-X7-cWo"/>
                         <outlet property="tableView" destination="Kkc-pi-Ekn" id="dt0-pl-6E8"/>
                         <outlet property="userPhotoImg" destination="36u-aF-61m" id="W7C-fs-4Qr"/>
                         <outlet property="userPhotoTable" destination="kYG-kC-e0w" id="PeC-R1-ZcI"/>
