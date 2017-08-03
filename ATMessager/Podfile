@@ -15,5 +15,5 @@ target 'ATMessager' do
   pod 'JSQMessagesViewController'
   pod 'DTPhotoViewerController'
   pod 'MMLoadingButton'
-  
+  pod 'MarqueeLabel/Swift'
 end
