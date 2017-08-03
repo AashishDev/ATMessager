@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (4.5.0)
   - DTPhotoViewerController (1.0.8)
   - Firebase/AdMob (3.16.0):
     - Firebase/Core
@@ -52,8 +53,10 @@ PODS:
   - SDWebImage (4.0.0):
     - SDWebImage/Core (= 4.0.0)
   - SDWebImage/Core (4.0.0)
+  - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
+  - Alamofire (~> 4.4)
   - DTPhotoViewerController
   - Firebase/AdMob
   - Firebase/Auth
@@ -64,8 +67,10 @@ DEPENDENCIES:
   - MarqueeLabel/Swift
   - MMLoadingButton
   - SDWebImage
+  - SwiftyJSON
 
 SPEC CHECKSUMS:
+  Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
   DTPhotoViewerController: 12769a5dba1d2e2147a058111e7d6f0188de6944
   Firebase: 21bf4a89d3f01bfbe11adc3a5d934a4a3d3a5fd6
   FirebaseAnalytics: 920e46455f27b0a52a80907a6d9b73ee4bd1c635
@@ -82,7 +87,8 @@ SPEC CHECKSUMS:
   MarqueeLabel: 17c5148b6f7144498eff5e0d286bd2e7e866f972
   MMLoadingButton: 1a40ca827d3514c3233ed4f7a7511ee51c36eeb3
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: ffe89032187110f7d533ec8bda1ae82abee155fe
+PODFILE CHECKSUM: c7e7cea5703559ead5df694899436f069b954975
 
 COCOAPODS: 1.2.1

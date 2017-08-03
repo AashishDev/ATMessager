@@ -16,4 +16,6 @@ target 'ATMessager' do
   pod 'DTPhotoViewerController'
   pod 'MMLoadingButton'
   pod 'MarqueeLabel/Swift'
+  pod 'Alamofire', '~> 4.4'
+  pod 'SwiftyJSON'
 end

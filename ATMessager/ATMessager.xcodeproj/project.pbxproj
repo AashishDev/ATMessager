@@ -20,6 +20,7 @@
 		175B61311F1F2EBD0013919B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 175B612F1F1F2EBD0013919B /* Main.storyboard */; };
 		175B61331F1F2EBD0013919B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 175B61321F1F2EBD0013919B /* Assets.xcassets */; };
 		175B61361F1F2EBD0013919B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 175B61341F1F2EBD0013919B /* LaunchScreen.storyboard */; };
+		175CA4C91F3341D700B7D62D /* NetworkConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175CA4C81F3341D700B7D62D /* NetworkConfig.swift */; };
 		175F3D6B1F1F6DDA00A06997 /* FirebaseUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175F3D6A1F1F6DDA00A06997 /* FirebaseUtils.swift */; };
 		175F3D6D1F1F6E3100A06997 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175F3D6C1F1F6E3100A06997 /* LoginViewController.swift */; };
 		175F3D721F1F6E8100A06997 /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175F3D711F1F6E8100A06997 /* UserListViewController.swift */; };
@@ -47,6 +48,7 @@
 		175B61321F1F2EBD0013919B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		175B61351F1F2EBD0013919B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		175B61371F1F2EBD0013919B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		175CA4C81F3341D700B7D62D /* NetworkConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkConfig.swift; sourceTree = "<group>"; };
 		175F3D6A1F1F6DDA00A06997 /* FirebaseUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseUtils.swift; sourceTree = "<group>"; };
 		175F3D6C1F1F6E3100A06997 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		175F3D711F1F6E8100A06997 /* UserListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserListViewController.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 		175B612A1F1F2EBD0013919B /* ATMessager */ = {
 			isa = PBXGroup;
 			children = (
+				175CA4C51F33415F00B7D62D /* Network */,
 				174C9C961F221E36009AC02B /* Lib */,
 				1747732C1F20CF2C006F20E7 /* Model */,
 				175F3D681F1F6DA400A06997 /* Utils */,
@@ -129,6 +132,30 @@
 				174C9C921F2208CB009AC02B /* ATMessager-Bridging-Header.h */,
 			);
 			path = ATMessager;
+			sourceTree = "<group>";
+		};
+		175CA4C51F33415F00B7D62D /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				175CA4C71F33418400B7D62D /* ServiceUtils */,
+				175CA4C61F33417000B7D62D /* UserListService */,
+				175CA4C81F3341D700B7D62D /* NetworkConfig.swift */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
+		175CA4C61F33417000B7D62D /* UserListService */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = UserListService;
+			sourceTree = "<group>";
+		};
+		175CA4C71F33418400B7D62D /* ServiceUtils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ServiceUtils;
 			sourceTree = "<group>";
 		};
 		175F3D651F1F6D6000A06997 /* ViewController */ = {
@@ -348,6 +375,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				174C9C981F221E41009AC02B /* InstagramActivityIndicator.swift in Sources */,
+				175CA4C91F3341D700B7D62D /* NetworkConfig.swift in Sources */,
 				17600B341F2315FB009B0053 /* UserTableViewCell.swift in Sources */,
 				175F3D721F1F6E8100A06997 /* UserListViewController.swift in Sources */,
 				175F3D6D1F1F6E3100A06997 /* LoginViewController.swift in Sources */,
